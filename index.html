@@ -237,14 +237,34 @@ Dr. Bhimrao Ramji Ambedkar's life connected education, social justice, constitut
     track.style.transform = "translateX(-" + shift + "%)";
   }
 
+  // The carousel displays lightweight WebP files, but clicks MUST open the
+  // original watermarked PNG files from /images/ at full resolution.
+  const originalImages = {
+    "/images/thumbs/1947.webp": "/images/1947.png",
+    "/images/thumbs/DrAmbedkar.webp": "/images/DrAmbedkar.png",
+    "/images/thumbs/Gandhiji.webp": "/images/Gandhiji.png",
+    "/images/thumbs/CM-CBNaiduGaru.webp": "/images/CM-CBNaiduGaru.png",
+    "/images/thumbs/pm-narendramodiji.webp": "/images/pm-narendramodiji.png",
+    "/images/thumbs/my-mother-balamani.webp": "/images/my-mother-balamani.png",
+    "/images/thumbs/Advaith.webp": "/images/Advaith.png",
+    "/images/thumbs/MasterDevaansh.webp": "/images/MasterDevaansh.png",
+    "/images/thumbs/Rafael_Aman_thai_telugu_eng.webp": "/images/Rafael_Aman_thai_telugu_eng.png",
+    "/images/thumbs/TN-07-CM-2026-001.webp": "/images/TN-07-CM-2026-001.png",
+    "/images/thumbs/greecepm2.webp": "/images/greecepm2.png",
+    "/images/thumbs/President-xijinping-01.webp": "/images/President-xijinping-01.png",
+    "/images/thumbs/Word-Smith-Shashi-Tharoor.webp": "/images/Word-Smith-Shashi-Tharoor.png"
+  };
+
   function render() {
     track.innerHTML = selected.map(function (src, index) {
       const alt = index === 0
         ? "India 1947 Freedom Archive — 1947 to 2026"
         : "1947 archive image " + (index + 1);
 
+      const fullImage = originalImages[src] || src;
+
       return '<div class="carousel-slide">' +
-             '<a href="' + src + '" target="_blank" rel="noopener noreferrer" title="Open the original watermarked full-resolution image in a new window">' +
+             '<a href="' + fullImage + '" target="_blank" rel="noopener noreferrer" title="Open original watermarked full-resolution image">' +
              '<img src="' + src + '" alt="' + alt + '" loading="' +
              (index < 2 ? "eager" : "lazy") + '">' +
              '</a>' +
