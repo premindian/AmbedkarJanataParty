@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Great American–Indian Mystery | 250th Anniversary Commemorative Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Orbitron:wght@600;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Base Reset & Core Display Stabilization */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: #020408;
+            font-family: 'Inter', sans-serif;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        /* Fully Stabilized Alignment Grid - Completely Closes Top and Bottom Space Gaps */
+        .hero {
+            min-height: 100vh;
+            padding: 20px 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background:
+                radial-gradient(circle at 50% 25%, rgba(102, 126, 234, 0.22), transparent 50%),
+                linear-gradient(180deg, #03050a 0%, #070a13 50%, #020408 100%);
+        }
+
+        /* The Luminous Glass Core Panel */
+        .glass-portal-card {
+            max-width: 860px;
+            width: 100%;
+            background: rgba(6, 9, 18, 0.94);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.85);
+            margin-bottom: 35px;
+            z-index: 10;
+        }
+
+        /* HARD-LOCKED DIPLOMATIC ALLIANCE ROW: Flags and Eagle Placed Securely Inside the Frame */
+        .alliance-header-frame {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 25px;
+        }
+
+        /* High-Contrast Rectangular Flag Blocks */
+        .sovereign-svg-flag {
+            width: 60px;
+            height: 36px;
+            border-radius: 3px;
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+            display: block;
+        }
+
+        /* Solid Gold Eagle Medallion Badge: Locked in place above the title text */
+        .eagle-crest-badge {
+            width: 72px;
+            height: 72px;
+            border: 2px solid #ffd700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            background: rgba(255, 215, 0, 0.08);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.35);
+        }
+
+        /* Luxury Presentation Typography */
+        .main-monument-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.7rem;
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .main-monument-title span {
+            background: linear-gradient(135deg, #fff9d6 0%, #ffd700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Sacred Generational Dedication Container */
+        .maternal-dedication-box {
+            margin: 15px auto 5px auto;
+            max-width: 740px;
+            padding: 16px 22px;
+            background: rgba(255, 215, 0, 0.03);
+            border-radius: 12px;
+            border-left: 2px solid #ffd700;
+            border-right: 2px solid #ffd700;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #fff7c7;
+            text-align: left;
+        }
+
+        .maternal-dedication-box p {
+            margin-bottom: 10px;
+        }
+        .maternal-dedication-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .maternal-dedication-box strong {
+            color: #ffffff;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+            font-style: normal;
+        }
+
+        /* Milestone Callout Ribbon Badges */
+        .milestone-ribbon {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            color: #ffd700;
+            margin-top: 20px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .commemorative-badge {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 6px;
+            color: #818cf8;
+            text-transform: uppercase;
+            margin-top: 8px;
+            text-shadow: 0 0 10px rgba(129, 140, 248, 0.3);
+        }
+
+        .chronological-vector {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #ffd700;
+            letter-spacing: 4px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .chronological-vector .arrow {
+            font-size: 1.3rem;
+            color: rgba(255, 215, 0, 0.4);
+            text-shadow: 0 0 8px #ffd700;
+        }
+
+        .epigraph-block {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            font-weight: 300;
+            color: #cbd5e1;
+            max-width: 740px;
+            margin: 0 auto 30px auto;
+        }
+
+        .epigraph-block strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        /* System Vault Navigation Action Button */
+        .quantum-ignition-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 44px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #020408;
+            background: linear-gradient(135deg, #fff7c7 0%, #ffd700 50%, #f59e0b 100%);
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.4);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 25;
+        }
+
+        .quantum-ignition-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 35px rgba(245, 158, 11, 0.55);
+        }
+
+        /* The Architectural Journey Grid Map */
+        .archive-grid-matrix {
+            max-width: 1050px;
+            width: 100%;
+            padding: 0 16px 40px 16px;
+            z-index: 10;
+        }
+
+        .matrix-header {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            color: #ffffff;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .volume-card {
+            background: rgba(11, 15, 28, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 26px;
+            text-align: left;
+        }
+
+        .volume-card.active-volume { border-left: 3px solid #818cf8; }
+        .volume-card.forthcoming-volume { border-left: 3px solid #ffd700; }
+
+        .volume-tag {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #818cf8;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .volume-card.forthcoming-volume .volume-tag { color: #ffd700; }
+
+        .volume-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .volume-desc {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #94a3b8;
+            font-weight: 300;
+        }
+
+        /* Monolithic Authoritative Signature Footer */
+        .scribe-monument-footer {
+            width: 100%;
+            max-width: 860px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 15px;
+            padding-top: 30px;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .scribe-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .scribe-date {
+            font-size: 0.85rem;
+            color: #ffd700;
+            letter-spacing: 2px;
+            margin-top: 4px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .scribe-achievement-matrix {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #94a3b8;
+            max-width: 800px;
+            margin: 15px auto 0 auto;
+            font-weight: 300;
+        }
+
+        .scribe-achievement-matrix strong {
+            color: #cbd5e1;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .main-monument-title { font-size: 2rem; }
+            .glass-portal-card { padding: 30px 15px; }
+            .alliance-header-frame { gap: 12px; }
+        }
+
+/* America 250 V3 */
+.anthem-card{max-width:900px;margin:50px auto;padding:35px;background:rgba(6,9,18,.94);border:1px solid rgba(255,215,0,.25);border-radius:20px;text-align:center}
+.anthem-btn{padding:16px 34px;border:none;border-radius:40px;background:linear-gradient(135deg,#fff7c7,#ffd700,#f59e0b);font-weight:700;cursor:pointer}
+.song-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:99999}
+.song-modal-content{max-width:1200px;height:94vh;margin:15px auto;background:#07111d;border-radius:20px;padding:25px;border:1px solid rgba(255,215,0,.25)}
+.close-song{float:right;font-size:36px;color:#ffd700;cursor:pointer}
+.hero250{text-align:center;margin:15px 0 25px}
+.hero250 .years{font-family:'Orbitron',sans-serif;font-size:2rem;color:#ffd700;letter-spacing:4px}
+.hero250 .tag{color:#cbd5e1}
+.song-tabs{text-align:center;margin:15px 0}
+.song-tabs button{margin:0 8px;padding:10px 20px;border-radius:20px;border:1px solid #ffd700;background:#101826;color:#fff;cursor:pointer}
+.song-scroll{height:60vh;overflow-y:auto;white-space:pre-line;line-height:1.8;color:#e2e8f0;padding:15px}
+.song-panel{display:none}
+.song-panel.active{display:block}
+
+
+/* ===== FLOATING HOME: RETURN TO THE WEBSITE BEGINNING ===== */
+.floating-home {
+    position: fixed;
+    top: 22px;
+    left: 22px;
+    z-index: 100000;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-width: 165px;
+    padding: 15px 26px;
+    border: 2px solid rgba(255,215,0,.9);
+    border-radius: 999px;
+    background: linear-gradient(135deg,#fff9d6 0%,#ffd700 50%,#f59e0b 100%);
+    color: #07101d;
+    text-decoration: none;
+    font-family: 'Orbitron',sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    box-shadow: 0 0 22px rgba(255,215,0,.45),0 12px 35px rgba(0,0,0,.6);
+    transition: transform .2s ease, box-shadow .2s ease;
+    backdrop-filter: blur(8px);
+}
+.floating-home:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 0 34px rgba(255,215,0,.7),0 16px 42px rgba(0,0,0,.65);
+}
+.floating-home:active {
+    transform: scale(.98);
+}
+.floating-home-icon {
+    font-size: 1.45rem;
+    line-height: 1;
+}
+@media (max-width:600px) {
+    .floating-home {
+        top: 12px;
+        left: 12px;
+        min-width: 135px;
+        padding: 12px 18px;
+        gap: 8px;
+        font-size: .82rem;
+        letter-spacing: 1.4px;
+    }
+    .floating-home-icon {
+        font-size: 1.2rem;
+    }
+}
+
+</style>
+
+
+</head>
+<body>
+
+<a href="../" class="floating-home" aria-label="Return to the website beginning"
+   title="Return to the website beginning">
+    <span class="floating-home-icon">⌂</span>
+    <span>HOME</span>
+</a>
+
+
+<div class="hero">
+
+    <div class="glass-portal-card">
+
+        <div class="alliance-header-frame">
+            <svg class="sovereign-svg-flag" viewBox="0 0 741 390">
+                <rect width="741" height="390" fill="#b22234"/>
+                <path d="M0 30h741M0 90h741M0 150h741M0 210h741M0 270h741M0 330h741" stroke="#ffffff" stroke-width="30"/>
+                <rect width="296" height="210" fill="#3c3b6e"/>
+                <path d="M20 25l4 10-8-6h10zM55 25l4 10-8-6h10zM90 25l4 10-8-6h10zM125 25l4 10-8-6h10zM160 25l4 10-8-6h10zM195 25l4 10-8-6h10zM35 55l4 10-8-6h10zM70 55l4 10-8-6h10z" fill="#ffffff"/>
+            </svg>
+
+            <div class="eagle-crest-badge">
+                🦅
+            </div>
+
+            <svg class="sovereign-svg-flag" viewBox="0 0 900 600">
+                <rect width="900" height="200" fill="#ff9933"/>
+                <rect y="200" width="900" height="200" fill="#ffffff"/>
+                <rect y="400" width="900" height="200" fill="#138808"/>
+                <circle cx="450" cy="300" r="65" fill="none" stroke="#000080" stroke-width="10"/>
+                <circle cx="450" cy="300" r="16" fill="#000080"/>
+            </svg>
+        </div>
+
+        <div class="main-monument-title">
+            <div>THE GREAT</div>
+            <div>AMERICAN–INDIAN</div>
+            <div><span>MYSTERY</span></div>
+        </div>
+
+        <div class="maternal-dedication-box">
+            <p style="font-style: italic;">
+                "Always be a Good Samaritan." Dedicated with profound love and honor to my mother, <strong>Konatham Balamani</strong>, whose timeless words guided this journey through every shadow. To my father <strong>Jesudaya</strong> for telling me about Dr. B.R. Ambedkar at a tender age.
+            </p>
+            <p style="font-style: italic;">
+                My heartfelt gratitude to Uncle Jeevaratnam Vallabha for encouraging me to think deeply about alphabets, numbers, and the mysteries they may reveal. A remarkable sequence of connections—from my engineering college mate Rajesh, to his friend Chinna Babu, to Pastor Vijaya Babu and Pastor Jaya Raj—ultimately led me to meet Uncle Jeevaratnam on number 21. Looking back, that meeting proved to be a key turning point in helping me uncover and understand the grand puzzle timeline that had been unfolding all along. I also Mysteriously met Pastor Cheemala Samuel Raju when i was looking for a whiteman's Bible.
+            </p>
+            <p style="font-style: normal; color: #fff7c7;">
+                <strong>The 9/11 Chronological Nexus:</strong> The genesis of this architecture rests on a synchronized matrix. It ties the moment President George W. Bush stood on alphabets and numbers on 9/11 straight to the exact 9th anniversary of 9/11, when Anveshi set foot for the first time on US soil in New York. One year later, on 9/11 IST in 2011, a son—Prince Rafael Aman—was born in Royal Oak, Michigan, igniting this grand computational library.
+            </p>
+            <p style="font-style: italic; font-size: 0.9rem; color: #cbd5e1; opacity: 0.9;">
+                Forged in solitary persistence while living under a cracked ceiling in a humble room costing just 3000 rupees per month since November 2021—a ceiling that finally collapsed entirely into his room on February 8, 2026. When there was no money to buy even simple $10 storybooks for my son at 6 years old, love forced my hand to spend five years mapmaking this entire alphanumeric universe for him.
+            </p>
+        </div>
+
+        <div class="milestone-ribbon">A Monumental 5-Year Research Masterpiece</div>
+        <div class="commemorative-badge">Exactly 1776 Puzzles To Traverse</div>
+
+        <div class="chronological-vector">
+            <span>1776</span>
+            <span class="arrow">⚡</span>
+            <span>2026</span>
+        </div>
+
+        <div class="epigraph-block">
+            On <strong>July 4, 1776</strong>, a nation was born under the eagle’s watch. Two hundred and fifty years later, on <strong>July 4, 2026</strong>, a definitive multi-lingual archive unfolds. What began as silent mathematical proofs across the ancient and modern scripts of India now crosses paths with global families, empires, and the cryptographic layout of world leaders.
+        </div>
+
+        <a href="India-Mystery-001.html" class="quantum-ignition-btn">
+            🚀 BEGIN THE JOURNEY
+        </a>
+    </div>
+
+    <div class="archive-grid-matrix">
+        <div class="matrix-header">The Journey Matrix</div>
+
+        <div class="grid-container">
+            <div class="volume-card active-volume">
+                <div class="volume-tag">Volume I</div>
+                <div class="volume-title">Foundations & Genesis</div>
+                <div class="volume-desc">The Untold Alphabet of India • The Konatham Family Chronicles • Multi-Script Structural Origins</div>
+            </div>
+
+            <div class="volume-card active-volume">
+                <div class="volume-tag">Volume II</div>
+                <div class="volume-title">The Sovereign Bridge</div>
+                <div class="volume-desc">The Crown and the Whisper • Analytical Mappings of the United Kingdom Royal Systems</div>
+            </div>
+
+            <div class="volume-card active-volume">
+                <div class="volume-tag">Volume III</div>
+                <div class="volume-title">President Donald Trump Alphabet Mysteries</div>
+                <div class="volume-desc">The Trump Master Files • Scrolls 001–023 • Complete 2024 Presidential Alphanumeric Alignments</div>
+            </div>
+
+            <div class="volume-card active-volume">
+                <div class="volume-tag">Volume IV</div>
+                <div class="volume-title">Princess Anveshi Chronicles</div>
+                <div class="volume-desc">The Divine Hebrew Code Modules • Parts I–IX • The Endurance and Alignment of America's First Princess</div>
+            </div>
+
+            <div class="volume-card active-volume">
+                <div class="volume-tag">Volume V</div>
+                <div class="volume-title">Prince Rafael Manifests</div>
+                <div class="volume-desc">The Song of the New World Heir • Parts I–VIII • Fine Tuning Chronological Vectors and Time Clocks</div>
+            </div>
+
+            <div class="volume-card forthcoming-volume">
+                <div class="volume-tag">Volume VI</div>
+                <div class="volume-title">The Jeff Bezos and Charlie Kirk Matrix</div>
+                <div class="volume-desc">
+                    Venice, Memory, Faith and Legacy • The Bezos–Sanchez Marriage Scroll •
+                    The Charlie Kirk Scroll • Love, Influence, Public Life and the Echoes of Modern America
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="anthem-card">
+<div class="milestone-ribbon">🇺🇸 America 250 Freedom Anthem 🇮🇳</div>
+<div class="main-monument-title"><span>ONE HUMAN FAMILY</span></div>
+<p style="margin:15px 0;color:#cbd5e1">Album Version (10 min) • Public Version (5 min)</p>
+<button class="anthem-btn" onclick="openAmerica250Song()">🎵 OPEN ANTHEM EXPERIENCE</button>
+</div>
+
+<div class="scribe-monument-footer">
+        <div class="scribe-name">Prem Kumar Konatham</div>
+        <div class="scribe-date">17-JUNE-2026 - A Tribute to my mother Balamani who left this world on 17-JUNE-2026 after 21 minutes of completion of this project :: 21-June-2026 - On father's day - a love letter with a brain injury to my Son Rafael Aman :: A love letter to America for 05-July-2026 -- it's 250th Birthday</div>
+        <div class="scribe-achievement-matrix">
+            From the Architect and Developer of the World's First Computational Alphanumeric Systems for
+            <strong>Telugu</strong>, <strong>Hindi</strong>, <strong>Tamil</strong>, <strong>Malayalam</strong>,
+            <strong>Thai</strong>, and <strong>Chinese 9-Stroke</strong> Gematria Calculators.
+        </div>
+    </div>
+</div>
+
+
+
+
+<div id="america250Modal" class="song-modal">
+<div class="song-modal-content">
+<span class="close-song" onclick="closeAmerica250Song()">&times;</span>
+
+<div class="alliance-header-frame">
+<svg class="sovereign-svg-flag" viewBox="0 0 741 390"><rect width="741" height="390" fill="#b22234"/><path d="M0 30h741M0 90h741M0 150h741M0 210h741M0 270h741M0 330h741" stroke="#ffffff" stroke-width="30"/><rect width="296" height="210" fill="#3c3b6e"/></svg>
+<div class="eagle-crest-badge">🦅</div>
+<svg class="sovereign-svg-flag" viewBox="0 0 900 600"><rect width="900" height="200" fill="#ff9933"/><rect y="200" width="900" height="200" fill="#ffffff"/><rect y="400" width="900" height="200" fill="#138808"/><circle cx="450" cy="300" r="65" fill="none" stroke="#000080" stroke-width="10"/><circle cx="450" cy="300" r="16" fill="#000080"/></svg>
+</div>
+
+<div class="hero250">
+<div class="years">1776 → 2026</div>
+<div class="tag">250 Years of Freedom • Family • Sacrifice • Hope</div>
+</div>
+
+<div class="song-tabs">
+<button onclick="showSongTab('publicTab')">Public Version</button>
+<button onclick="showSongTab('albumTab')">Album Version</button>
+</div>
+
+<div class="song-scroll">
+<div id="publicTab" class="song-panel active">
+<h2>PUBLIC VERSION (~5 Minutes)</h2>
+Short Overture
+
+From fourteen ninety-two...
+
+To sixteen nineteen...
+
+From forgotten nations...
+
+To dreamers crossing oceans...
+
+One thousand seven hundred seventy-six puzzles...
+
+Ten languages...
+
+Millions of families...
+
+One Human Family...
+
+Main Verse
+
+The years kept turning onward
+
+Through the battles and the scars.
+
+Till voices marched for justice
+
+Beneath the southern stars.
+
+The presidents kept changing.
+
+The cities reached the clouds.
+
+Immigrants crossed oceans
+
+To join the restless crowds.
+
+Bridge
+
+A boy was born with questions
+
+And a fire inside his mind.
+
+His mother spoke of sacrifice.
+
+His future he must find.
+
+Across the seas he journeyed.
+
+Searching for tomorrow.
+
+Then love arrived in Anveshi.
+
+And hope replaced the sorrow.
+
+America 250
+
+The centuries kept turning,
+
+Through every rise and fall.
+
+Through broken chains and freedom dreams,
+
+A nation carried all.
+
+At Freedom Two-Fifty's thunder,
+
+The crowds began to roar.
+
+A celebration of a nation,
+
+Still opening one more door.
+
+GLOBAL CHOIR
+
+Instead of the full language verses, use only:
+
+Telugu
+
+ఒక మానవ కుటుంబం
+
+Chinese
+
+同一个人类家庭
+
+Arabic
+
+عائلة إنسانية واحدة
+
+Hebrew
+
+משפחה אנושית אחת
+
+Greek
+
+Μία ανθρώπινη οικογένεια
+
+English
+
+One Human Family
+</div>
+
+<div id="albumTab" class="song-panel">
+<h2>ALBUM VERSION (~10 Minutes)</h2>
+
+## ALBUM VERSION - AMERICA 250 Freedom Song
+
+### OVERTURE
+
+> From the shores of fourteen ninety-two...
+>
+> To the slave ships of sixteen nineteen...
+>
+> From forgotten nations...
+>
+> To cotton fields and auction blocks...
+>
+> From the waters of the Zong...
+>
+> To the footsteps of dreamers arriving on distant shores...
+>
+> From cracked ceilings...
+>
+> To towers touching the sky...
+>
+> Five years of solitary tracking.
+>
+> One thousand seven hundred seventy-six puzzles to traverse.
+>
+> Ten languages.
+>
+> Millions of separated families.
+>
+> One story.
+>
+> One human family.
+>
+> Mother Balamani, your words remain:
+>
+> "Always be a Good Samaritan."
+
+---
+
+### VERSE 1
+
+In fourteen ninety-two the ships crossed oceans wide,
+
+Searching for a world unknown beneath the endless sky.
+
+Upon the fields and forests lived the first forgotten souls,
+
+Whose songs were carried by the wind before the story told.
+
+Then walls were drawn by power,
+
+And old paths disappeared.
+
+A nation rose from promises,
+
+But also from its tears.
+
+The drums of change kept beating,
+
+Yet echoes still remain.
+
+For every dream that's written down,
+
+Another bears the pain.
+
+---
+
+### PRE-CHORUS
+
+Can you hear the mothers crying?
+
+Can you hear the fathers call?
+
+Can you hear the chains of history
+
+Rattling through us all?
+
+Can you hear the generations
+
+Reaching through the years?
+
+Can you hear the silent prayers
+
+Still echoing in our ears?
+
+---
+
+### CHORUS
+
+What have we done with the world we created?
+
+Can every child sleep safe tonight?
+
+Take down the walls that divide the human family,
+
+Let kindness be our light.
+
+One human race.
+
+One beating heart.
+
+One love beneath the sky.
+
+No more violence.
+
+No more fear.
+
+Let every dream survive.
+
+---
+
+### VERSE 2
+
+From distant shores they carried them
+
+In sixteen nineteen's tide.
+
+Packed inside the wooden ships
+
+Where hope itself could hide.
+
+Families torn on auction blocks,
+
+Their names erased by trade.
+
+Mothers wept and fathers prayed
+
+As children were conveyed.
+
+The cold waves of the ocean know
+
+The stories of the lost.
+
+The price of human suffering.
+
+The terrible hidden cost.
+
+The cotton fields remember.
+
+The rivers know the sound.
+
+Of countless souls whose whispered prayers
+
+Still rise up from the ground.
+
+---
+
+### CHORUS
+
+(Repeat)
+
+---
+
+### VERSE 3
+
+The years kept turning onward
+
+Through the battles and the scars.
+
+Till voices marched for justice
+
+Beneath the southern stars.
+
+A dreamer spoke of freedom.
+
+Millions heard the call.
+
+That liberty means little
+
+Until it reaches all.
+
+The presidents kept changing.
+
+The cities reached the clouds.
+
+Immigrants crossed oceans
+
+To join the restless crowds.
+
+Working fields and factories.
+
+Hotels, roads and steel.
+
+Building up a nation
+
+Through determination's will.
+
+---
+
+### TRANSITION
+
+Then another traveler came.
+
+A child of modest means.
+
+Carrying questions in his heart.
+
+And impossible dreams.
+
+---
+
+### BRIDGE I – THE DREAMER
+
+His mother spoke of sacrifice.
+
+His future had to rise.
+
+She would sell her treasured gold
+
+To keep alive his skies.
+
+Across the seas he journeyed.
+
+Where towers touched the blue.
+
+Searching for tomorrow.
+
+Like millions came to do.
+
+Then love arrived in Anveshi.
+
+A promise through the years.
+
+Holding on through distance.
+
+Through uncertainty and fears.
+
+---
+
+### BRIDGE II – THE FAMILY
+
+One September she arrived.
+
+Carrying hope ashore.
+
+Believing life would open
+
+A brighter future's door.
+
+A son was born.
+
+A miracle.
+
+A light the darkness knew.
+
+A father saw tomorrow
+
+Looking back at him anew.
+
+Yet storms would gather round them.
+
+And trials would appear.
+
+Questions without answers.
+
+And seasons filled with fear.
+
+But love refused surrender.
+
+Though fortunes rose and fell.
+
+The heart continued beating
+
+Through every private hell.
+
+---
+
+### SPOKEN INTERLUDE
+
+One thousand seven hundred seventy-six puzzles.
+
+Ten language systems.
+
+A father's vault of memory.
+
+Built not from gold.
+
+But from persistence.
+
+Built not from power.
+
+But from love.
+
+---
+
+### BRIDGE III – THE LEGACY
+
+No thousand rupees for books.
+
+No palace made of stone.
+
+Just a cracked ceiling overhead.
+
+And dreams to call his own.
+
+The years became equations.
+
+The questions became keys.
+
+Searching through the stories
+
+Hidden in history.
+
+Names became reflections.
+
+Numbers became signs.
+
+A map assembled patiently
+
+Across the sands of time.
+
+Not for wealth.
+
+Not for glory.
+
+But for a son who someday
+
+Would understand that love.
+
+---
+
+### AMERICA 250
+
+The centuries kept turning,
+
+Through every rise and fall.
+
+Through broken chains and freedom dreams,
+
+A nation carried all.
+
+From wooden ships on distant seas,
+
+To rockets in the sky,
+
+Two hundred fifty birthdays passed,
+
+As generations journeyed by.
+
+The workers built the railroads.
+
+The farmers tilled the land.
+
+The dreamers crossed the oceans.
+
+With hope held in their hands.
+
+The presidents kept changing.
+
+Each writing history's page.
+
+While new voices stepped forward.
+
+To meet another age.
+
+At Freedom Two-Fifty's thunder,
+
+The crowds began to roar.
+
+A celebration of a nation.
+
+Still opening one more door.
+
+The White House lights were shining.
+
+As America looked ahead.
+
+Remembering every chapter.
+
+And every tear once shed.
+
+From the first forgotten footsteps.
+
+To the children yet to come.
+
+The story still is being written.
+
+The journey is not done.
+
+---
+
+### GLOBAL CHOIR
+
+Telugu (Solo)
+
+ఒక మానవ కుటుంబం
+కరుణను ఎంచుకోండి
+
+Hindi joins
+
+एक मानव परिवार
+करुणा को चुनो
+
+Tamil joins
+
+ஒரு மனிதக் குடும்பம்
+இரக்கத்தைத் தேர்ந்தெடு
+
+Malayalam joins
+
+ഒരു മനുഷ്യ കുടുംബം
+കരുണ തിരഞ്ഞെടുക്കൂ
+
+Thai joins
+
+หนึ่งครอบครัวมนุษย์
+จงเลือกความเมตตา
+
+Chinese joins
+
+同一个人类家庭
+选择慈悲
+
+Arabic joins
+
+عائلة إنسانية واحدة
+اختر الرحمة
+
+Hebrew joins
+
+משפחה אנושית אחת
+בחרו בחמלה
+
+Greek joins
+
+Μία ανθρώπινη οικογένεια
+Επιλέξτε τη συμπόνια
+
+English joins
+
+One Human Family
+Choose Compassion
+
+ALL LANGUAGES TOGETHER
+
+One Human Family...
+
+One Human Family...
+
+One Human Family...
+
+Carrying On...
+
+Heal the world.
+
+Choose compassion.
+
+One human family.
+
+---
+
+### FINAL CHORUS
+
+What have we done with the world we created?
+
+Can every child sleep safe tonight?
+
+No more chains.
+
+No more shadows.
+
+No more stolen human rights.
+
+One human family.
+
+One human story.
+
+One hope for every land.
+
+Let compassion be our language.
+
+Let love be our command.
+
+---
+
+### OUTRO
+
+For the living.
+
+For the dying.
+
+For the weak.
+
+For the strong.
+
+For the mothers.
+
+For the fathers.
+
+For the children yet unborn.
+
+One human family.
+
+Carrying on.
+
+One human family.
+
+Carrying on.
+
+One human family...
+
+Forever carrying on.
+
+</div>
+</div>
+
+</div></div>
+
+<script>
+function openAmerica250Song(){document.getElementById('america250Modal').style.display='block';}
+function closeAmerica250Song(){document.getElementById('america250Modal').style.display='none';}
+function showSongTab(id){
+document.querySelectorAll('.song-panel').forEach(x=>x.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
