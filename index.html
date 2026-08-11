@@ -102,7 +102,7 @@
 <nav><div class="container nav-inner"><a class="brand" href="#top">AMBEDKAR JANATA PARTY</a><div class="nav-links"><a href="#archive">Archive</a><a href="#mystery">Mystery</a><a href="#song">Song</a><a href="#film">Film</a><a href="#ambedkar">Ambedkar</a><a href="#help">Book of Help</a><a href="#participate">Participate</a></div></div></nav>
 <main id="top">
 <section class="hero"><div class="container hero-content"><div class="smallcaps">A People's Constitution • A People's History • A People's Movement</div><h1>Ambedkar<br>Janata Party</h1><div class="tagline">Liberty • Equality • Fraternity • Human Dignity</div><div class="year">1947 — 2026</div><div class="btns"><a class="btn primary" href="#archive">Explore the Archive</a><a class="btn secondary" href="#participate">Join the Movement</a></div></div></section>
-<section id="archive" class="archive"><div class="container"><div class="section-head"><div class="smallcaps">The Great Indian Mystery</div><h2>The 1947 Puzzle Archive</h2><p>1,947 puzzles. One journey through India's journey to freedom and constitutional democracy.</p></div><div class="stats"><div class="stat"><strong>1,947</strong><span>Puzzles</span></div><div class="stat"><strong>79</strong><span>Years Since Independence</span></div><div class="stat"><strong>10</strong><span>Languages</span></div><div class="stat"><strong>1</strong><span>Human Family</span></div></div><div class="archive-carousel" aria-label="The complete 1947 India visual archive"><button class="carousel-arrow prev" type="button" aria-label="Previous puzzle">‹</button><div class="carousel-window"><div class="carousel-track" id="archiveTrack"></div></div><button class="carousel-arrow next" type="button" aria-label="Next puzzle">›</button></div><div class="carousel-meta"><span id="archiveCounter">Complete archive collection</span><button class="shuffle-btn" type="button" id="shuffleArchive">⤨ Shuffle</button></div><div class="center-btn"><a class="btn" style="background:var(--navy);color:#fff;border-color:var(--navy)" target="_blank" rel="noopener" href="/HTML/india1947_freedom.html">Enter the 1947 Archive →</a></div></div></section>
+<section id="archive" class="archive"><div class="container"><div class="section-head"><div class="smallcaps">The Great Indian Mystery</div><h2>The 1947 Puzzle Archive</h2><p>1,947 puzzles. One journey through India's journey to freedom and constitutional democracy.</p></div><div class="stats"><div class="stat"><strong>1,947</strong><span>Puzzles</span></div><div class="stat"><strong>79</strong><span>Years Since Independence</span></div><div class="stat"><strong>10</strong><span>Languages</span></div><div class="stat"><strong>1</strong><span>Human Family</span></div></div><div class="archive-carousel" aria-label="The complete 1947 India visual archive"><button class="carousel-arrow prev" type="button" aria-label="Previous puzzle">‹</button><div class="carousel-window"><div class="carousel-track" id="archiveTrack"></div></div><button class="carousel-arrow next" type="button" aria-label="Next puzzle">›</button></div><div class="carousel-meta"><span id="archiveCounter">38 archive images • complete collection</span><button class="shuffle-btn" type="button" id="shuffleArchive">⤨ Shuffle</button></div><div class="center-btn"><a class="btn" style="background:var(--navy);color:#fff;border-color:var(--navy)" target="_blank" rel="noopener" href="/HTML/india1947_freedom.html">Enter the 1947 Archive →</a></div></div></section>
 <section id="mystery" class="mystery-language-section">
   <div class="container">
     <div class="section-head center">
@@ -288,21 +288,48 @@ Dr. Bhimrao Ramji Ambedkar's life connected education, social justice, constitut
 (function () {
   "use strict";
 
+  const ARCHIVE_BASE = "https://trumpinmystery.com";
+
   // COMPLETE Ambedkar archive collection currently defined by this page.
   // Lightweight thumbnails are displayed; clicking opens /images/xxx.webp.
   const archiveImages = [
-    "/images/thumbs/1947.webp",
-    "/images/thumbs/DrAmbedkar.webp",
-    "/images/thumbs/Gandhiji.webp",
-    "/images/thumbs/CM-CBNaiduGaru.webp",
-    "/images/thumbs/pm-narendramodiji.webp",
-    "/images/thumbs/my-mother-balamani.webp",
-    "/images/thumbs/Advaith.webp",
-    "/images/thumbs/MasterDevaansh.webp",
-    "/images/thumbs/Rafael_Aman_thai_telugu_eng.webp",
+    "/images/thumbs/archive-trump-1776-2026.webp",
+    "/images/thumbs/President-Trump_2024-2026.webp",
+    "/images/thumbs/Trump-1.webp",
+    "/images/thumbs/Trump-2.webp",
+    "/images/thumbs/Trump-3.webp",
+    "/images/thumbs/Trump-4.webp",
+    "/images/thumbs/Trump-5.webp",
+    "/images/thumbs/Trump-6.webp",
+    "/images/thumbs/Trump-7.webp",
+    "/images/thumbs/Trump-8.webp",
+    "/images/thumbs/Trump-9.webp",
+    "/images/thumbs/Trump-10.webp",
+    "/images/thumbs/TRUMP-11.webp",
+    "/images/thumbs/Trump-12.webp",
+    "/images/thumbs/Trump-13.webp",
+    "/images/thumbs/Trump-14.webp",
+    "/images/thumbs/Trump-15.webp",
+    "/images/thumbs/Trump-16.webp",
+    "/images/thumbs/Trump-17.webp",
+    "/images/thumbs/Trump-18.webp",
+    "/images/thumbs/Trump-19.webp",
+    "/images/thumbs/Trump-20.webp",
+    "/images/thumbs/Trump-21.webp",
+    "/images/thumbs/Trump-22.webp",
+    "/images/thumbs/Trump-23.webp",
+    "/images/thumbs/Trump-China-01.webp",
+    "/images/thumbs/SNO-123-final.webp",
+    "/images/thumbs/SNO-124e.webp",
+    "/images/thumbs/SNO-132e.webp",
+    "/images/thumbs/SNO-133e.webp",
+    "/images/thumbs/SNO-24o.webp",
+    "/images/thumbs/SNO-TRUMP-INT-134a.webp",
+    "/images/thumbs/SNO-TRUMP-INT-134b.webp",
+    "/images/thumbs/sno25b.webp",
+    "/images/thumbs/sno25Orig.webp",
+    "/images/thumbs/TedTurner-1.webp",
     "/images/thumbs/TN-07-CM-2026-001.webp",
-    "/images/thumbs/greecepm2.webp",
-    "/images/thumbs/President-xijinping-01.webp",
     "/images/thumbs/Word-Smith-Shashi-Tharoor.webp"
   ];
 
@@ -325,7 +352,9 @@ Dr. Bhimrao Ramji Ambedkar's life connected education, social justice, constitut
   }
 
   function fullImage(src) {
-    return src.replace("/images/thumbs/", "/images/");
+    return ARCHIVE_BASE +
+      src.replace("/images/thumbs/", "/images/")
+         .replace(/\.webp$/i, ".png");
   }
 
   function updatePosition() {
