@@ -12,7 +12,7 @@
 .shuffle-btn{border:1px solid var(--line);border-radius:999px;padding:9px 14px;background:var(--paper);color:var(--navy);font:800 .72rem Arial,sans-serif;text-transform:uppercase;letter-spacing:.07em;cursor:pointer}
 .shuffle-btn:hover{background:var(--navy);color:#fff}
 @media(max-width:850px){.carousel-slide{flex-basis:33.3333%}}
-@media(max-width:520px){.archive-carousel{gap:7px}.carousel-arrow{flex-basis:38px;width:38px;height:38px;font-size:1.6rem}.carousel-slide{flex-basis:50%;padding:5px}}.carousel-arrow{flex-basis:38px;width:38px;height:38px;font-size:1.6rem}.carousel-slide{min-width:50%;padding:5px}}
+@media(max-width:520px){.archive-carousel{gap:7px}.carousel-arrow{flex:0 0 38px;width:38px;height:38px;font-size:1.6rem}.carousel-slide{flex:0 0 50%;padding:5px}}
 @media(max-width:850px){.nav-inner{padding:12px 0}.nav-links{display:none}section{padding:68px 0}.stats{grid-template-columns:repeat(2,1fr)}.puzzles{grid-template-columns:repeat(2,1fr)}.cards,.quote-grid{grid-template-columns:1fr}.timeline{grid-template-columns:repeat(2,1fr);gap:20px}.timeline:before{display:none}.dot{margin-top:10px}}@media(max-width:520px){.hero{min-height:76vh}.hero h1{font-size:3.2rem}.song-body{padding:0 15px 22px}}
 
 .book-help-shelf{margin-top:34px;padding:30px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(135deg,#fffdf8,#f4ead7);box-shadow:var(--shadow)}
@@ -96,6 +96,163 @@
 .mystery-line b{color:#b28a48}
 @media(max-width:700px){
   .language-mystery-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+
+<style>
+html,body{
+  width:100%;
+  max-width:100%;
+  margin:0;
+  padding:0;
+  overflow-x:hidden;
+}
+*,*::before,*::after{box-sizing:border-box}
+
+.container{
+  width:min(1160px,calc(100% - 32px));
+  max-width:100%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+img,video,iframe{max-width:100%}
+
+@media(max-width:850px){
+  .nav-inner{
+    min-height:58px;
+    padding:10px 0;
+    align-items:center;
+  }
+  .brand{
+    max-width:145px;
+    line-height:1.05;
+    font-size:.82rem;
+  }
+  .nav-links{
+    display:flex;
+    flex:1;
+    justify-content:flex-end;
+    gap:8px;
+    overflow:hidden;
+  }
+  .nav-links a{
+    font-size:.58rem;
+    letter-spacing:0;
+    white-space:nowrap;
+  }
+  .hero{
+    min-height:76vh;
+    width:100%;
+  }
+  .hero-content{
+    width:100%;
+    padding:90px 0 70px;
+  }
+  section{
+    width:100%;
+  }
+}
+
+@media(max-width:600px){
+  .container{
+    width:calc(100% - 28px);
+  }
+  .nav-inner{
+    gap:8px;
+  }
+  .brand{
+    flex:0 0 110px;
+  }
+  .nav-links{
+    gap:7px;
+  }
+  .nav-links a{
+    font-size:.54rem;
+  }
+  .hero h1{
+    font-size:clamp(2.7rem,12vw,4rem);
+  }
+  .tagline{
+    font-size:.82rem;
+    letter-spacing:.08em;
+  }
+  .year{
+    font-size:1rem;
+  }
+
+  .archive-carousel{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .carousel-window{
+    min-width:0;
+    flex:1 1 auto;
+  }
+  .carousel-slide{
+    flex:0 0 50%;
+    min-width:50%;
+    padding:5px;
+  }
+  .carousel-slide img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+  }
+  .carousel-arrow{
+    flex:0 0 38px;
+    width:38px;
+    height:38px;
+    padding:0;
+  }
+  .carousel-meta{
+    width:100%;
+    flex-wrap:wrap;
+    text-align:center;
+    gap:10px;
+  }
+
+  .language-mystery-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    width:100%;
+  }
+  .language-mystery-grid div{
+    min-width:0;
+    overflow-wrap:anywhere;
+  }
+}
+
+@media(max-width:430px){
+  .container{
+    width:calc(100% - 24px);
+  }
+  .nav-inner{
+    align-items:flex-start;
+  }
+  .brand{
+    flex-basis:92px;
+    font-size:.72rem;
+  }
+  .nav-links{
+    flex-wrap:wrap;
+    justify-content:flex-end;
+    row-gap:5px;
+    max-height:42px;
+  }
+  .nav-links a{
+    font-size:.5rem;
+  }
+  .archive-carousel{
+    gap:4px;
+  }
+  .carousel-arrow{
+    flex-basis:34px;
+    width:34px;
+    height:34px;
+    font-size:1.4rem;
+  }
 }
 </style>
 </head><body>
