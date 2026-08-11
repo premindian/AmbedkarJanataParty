@@ -259,7 +259,7 @@ img,video,iframe{max-width:100%}
 <nav><div class="container nav-inner"><a class="brand" href="#top">AMBEDKAR JANATA PARTY</a><div class="nav-links"><a href="#archive">Archive</a><a href="#mystery">Mystery</a><a href="#song">Song</a><a href="#film">Film</a><a href="#ambedkar">Ambedkar</a><a href="#help">Book of Help</a><a href="#participate">Participate</a></div></div></nav>
 <main id="top">
 <section class="hero"><div class="container hero-content"><div class="smallcaps">A People's Constitution • A People's History • A People's Movement</div><h1>Ambedkar<br>Janata Party</h1><div class="tagline">Liberty • Equality • Fraternity • Human Dignity</div><div class="year">1947 — 2026</div><div class="btns"><a class="btn primary" href="#archive">Explore the Archive</a><a class="btn secondary" href="#participate">Join the Movement</a></div></div></section>
-<section id="archive" class="archive"><div class="container"><div class="section-head"><div class="smallcaps">The Great Indian Mystery</div><h2>The 1947 Puzzle Archive</h2><p>1,947 puzzles. One journey through India's journey to freedom and constitutional democracy.</p></div><div class="stats"><div class="stat"><strong>1,947</strong><span>Puzzles</span></div><div class="stat"><strong>79</strong><span>Years Since Independence</span></div><div class="stat"><strong>10</strong><span>Languages</span></div><div class="stat"><strong>1</strong><span>Human Family</span></div></div><div class="archive-carousel" aria-label="The complete 1947 India visual archive"><button class="carousel-arrow prev" id="archivePrev" type="button" aria-label="Previous puzzle">‹</button><div class="carousel-window"><div class="carousel-track" id="archiveTrack"></div></div><button class="carousel-arrow next" id="archiveNext" type="button" aria-label="Next puzzle">›</button></div><div class="carousel-meta"><span id="archiveCounter">38 archive images • complete collection</span><button class="shuffle-btn" type="button" id="shuffleArchive">⤨ Shuffle</button></div><div class="center-btn"><a class="btn" style="background:var(--navy);color:#fff;border-color:var(--navy)" target="_blank" rel="noopener" href="/HTML/india1947_freedom.html">Enter the 1947 Archive →</a></div></div></section>
+<section id="archive" class="archive"><div class="container"><div class="section-head"><div class="smallcaps">The Great Indian Mystery</div><h2>The 1947 Puzzle Archive</h2><p>1,947 puzzles. One journey through India's journey to freedom and constitutional democracy.</p></div><div class="stats"><div class="stat"><strong>1,947</strong><span>Puzzles</span></div><div class="stat"><strong>79</strong><span>Years Since Independence</span></div><div class="stat"><strong>10</strong><span>Languages</span></div><div class="stat"><strong>1</strong><span>Human Family</span></div></div><div class="archive-carousel" aria-label="The complete 1947 India visual archive"><button class="carousel-arrow prev" id="archivePrev" type="button" aria-label="Previous puzzle">‹</button><div class="carousel-window"><div class="carousel-track" id="archiveTrack"></div></div><button class="carousel-arrow next" id="archiveNext" type="button" aria-label="Next puzzle">›</button></div><div class="carousel-meta"><span id="archiveCounter">50 archive images • complete collection</span><button class="shuffle-btn" type="button" id="shuffleArchive">⤨ Shuffle</button></div><div class="center-btn"><a class="btn" style="background:var(--navy);color:#fff;border-color:var(--navy)" target="_blank" rel="noopener" href="/HTML/india1947_freedom.html">Enter the 1947 Archive →</a></div></div></section>
 <section id="mystery" class="mystery-language-section">
   <div class="container">
     <div class="section-head center">
@@ -447,15 +447,35 @@ Dr. Bhimrao Ramji Ambedkar's life connected education, social justice, constitut
 
   const ARCHIVE_BASE = "https://trumpinmystery.com";
 
-  // Same shared collection as Lincoln/Trump: ALL 39 images.
-  // Initial order begins with the India-related images that are actually
-  // present in that shared collection.
+  // COMPLETE IMAGE DIRECTORY SHOWN IN THE USER'S SCREENSHOTS: 50 images.
+  // India-focused images are presented first; Shuffle randomizes all 50.
   const archiveImages = [
+    "/images/thumbs/1947.webp",
+    "/images/thumbs/DrAmbedkar.webp",
     "/images/thumbs/Gandhiji.webp",
-    "/images/thumbs/my-mother-balamani.webp",
+    "/images/thumbs/CM-CBNaiduGaru.webp",
     "/images/thumbs/pm-narendramodiji.webp",
+    "/images/thumbs/my-mother-balamani.webp",
+    "/images/thumbs/MasterDevaansh.webp",
+    "/images/thumbs/TN-07-CM-2026-001.webp",
+    "/images/thumbs/Word-Smith-Shashi-Tharoor.webp",
+    "/images/thumbs/Advaith.webp",
+    "/images/thumbs/archive-trump-1776-2026.webp",
+    "/images/thumbs/greecepm2.webp",
+    "/images/thumbs/President-Trump-2024-2026.webp",
+    "/images/thumbs/President-xijinping-01.webp",
+    "/images/thumbs/primeminister-israel-netanayu.webp",
     "/images/thumbs/Rafael_Aman_thai_telugu_eng.webp",
     "/images/thumbs/saudiPrince.webp",
+    "/images/thumbs/SNO-24o.webp",
+    "/images/thumbs/sno25b.webp",
+    "/images/thumbs/sno25Orig.webp",
+    "/images/thumbs/SNO-123-final.webp",
+    "/images/thumbs/SNO-124e.webp",
+    "/images/thumbs/SNO-132e.webp",
+    "/images/thumbs/SNO-133e.webp",
+    "/images/thumbs/SNO-TRUMP-INT-134b.webp",
+    "/images/thumbs/TedTurner-1.webp",
     "/images/thumbs/Trump-1.webp",
     "/images/thumbs/Trump-2.webp",
     "/images/thumbs/Trump-3.webp",
@@ -479,17 +499,7 @@ Dr. Bhimrao Ramji Ambedkar's life connected education, social justice, constitut
     "/images/thumbs/Trump-21.webp",
     "/images/thumbs/Trump-22.webp",
     "/images/thumbs/Trump-23.webp",
-    "/images/thumbs/Trump-China-01.webp",
-    "/images/thumbs/SNO-123-final.webp",
-    "/images/thumbs/SNO-124e.webp",
-    "/images/thumbs/SNO-132e.webp",
-    "/images/thumbs/SNO-133e.webp",
-    "/images/thumbs/SNO-TRUMP-INT-134b.webp",
-    "/images/thumbs/sno25b.webp",
-    "/images/thumbs/sno25Orig.webp",
-    "/images/thumbs/SNO-24o.webp",
-    "/images/thumbs/President-xijinping-01.webp",
-    "/images/thumbs/primeminister-israel-netanayu.webp"
+    "/images/thumbs/Trump-China-01.webp"
   ];
 
   const track = document.getElementById("archiveTrack");
@@ -507,7 +517,7 @@ Dr. Bhimrao Ramji Ambedkar's life connected education, social justice, constitut
 
   let images = archiveImages.slice();
   let position = 0;
-  let timer;
+  let timer = null;
 
   function visibleCount() {
     if (window.innerWidth <= 600) return 2;
@@ -515,22 +525,31 @@ Dr. Bhimrao Ramji Ambedkar's life connected education, social justice, constitut
     return 5;
   }
 
+  function fullUrl(path) {
+    return ARCHIVE_BASE + path;
+  }
+
   function render() {
     track.innerHTML = images.map(function (thumb, index) {
       const full = thumb.replace("/images/thumbs/", "/images/");
-      return '<div class="carousel-slide">' +
-        '<a href="' + ARCHIVE_BASE + full +
-        '" target="_blank" rel="noopener noreferrer">' +
-        '<img src="' + ARCHIVE_BASE + thumb +
-        '" alt="Ambedkar archive image ' + (index + 1) +
-        '" loading="' + (index < 5 ? "eager" : "lazy") + '">' +
-        '</a></div>';
+      return `
+        <div class="carousel-slide">
+          <a href="${fullUrl(full)}"
+             target="_blank"
+             rel="noopener noreferrer"
+             title="Open full-resolution archive image">
+            <img src="${fullUrl(thumb)}"
+                 alt="Ambedkar archive image ${index + 1}"
+                 loading="${index < 5 ? "eager" : "lazy"}"
+                 referrerpolicy="no-referrer">
+          </a>
+        </div>
+      `;
     }).join("");
 
     position = 0;
     update();
-    counter.textContent = images.length +
-      " archive images • complete collection";
+    counter.textContent = images.length + " archive images • complete collection";
   }
 
   function update() {
@@ -539,6 +558,15 @@ Dr. Bhimrao Ramji Ambedkar's life connected education, social justice, constitut
     position = Math.max(0, Math.min(position, max));
     track.style.transform =
       "translate3d(" + (-position * (100 / visible)) + "%,0,0)";
+  }
+
+  function restart() {
+    clearInterval(timer);
+    timer = setInterval(function () {
+      const max = Math.max(0, images.length - visibleCount());
+      position = position >= max ? 0 : position + 1;
+      update();
+    }, 5000);
   }
 
   prev.addEventListener("click", function () {
@@ -555,6 +583,7 @@ Dr. Bhimrao Ramji Ambedkar's life connected education, social justice, constitut
   });
 
   shuffleButton.addEventListener("click", function () {
+    // Fisher-Yates: randomize the ENTIRE 50-image collection.
     for (let i = images.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [images[i], images[j]] = [images[j], images[i]];
@@ -562,15 +591,6 @@ Dr. Bhimrao Ramji Ambedkar's life connected education, social justice, constitut
     render();
     restart();
   });
-
-  function restart() {
-    clearInterval(timer);
-    timer = setInterval(function () {
-      const max = Math.max(0, images.length - visibleCount());
-      position = position >= max ? 0 : position + 1;
-      update();
-    }, 5000);
-  }
 
   window.addEventListener("resize", update);
 
