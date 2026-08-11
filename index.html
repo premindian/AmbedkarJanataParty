@@ -259,7 +259,7 @@ img,video,iframe{max-width:100%}
 <nav><div class="container nav-inner"><a class="brand" href="#top">AMBEDKAR JANATA PARTY</a><div class="nav-links"><a href="#archive">Archive</a><a href="#mystery">Mystery</a><a href="#song">Song</a><a href="#film">Film</a><a href="#ambedkar">Ambedkar</a><a href="#help">Book of Help</a><a href="#participate">Participate</a></div></div></nav>
 <main id="top">
 <section class="hero"><div class="container hero-content"><div class="smallcaps">A People's Constitution • A People's History • A People's Movement</div><h1>Ambedkar<br>Janata Party</h1><div class="tagline">Liberty • Equality • Fraternity • Human Dignity</div><div class="year">1947 — 2026</div><div class="btns"><a class="btn primary" href="#archive">Explore the Archive</a><a class="btn secondary" href="#participate">Join the Movement</a></div></div></section>
-<section id="archive" class="archive"><div class="container"><div class="section-head"><div class="smallcaps">The Great Indian Mystery</div><h2>The 1947 Puzzle Archive</h2><p>1,947 puzzles. One journey through India's journey to freedom and constitutional democracy.</p></div><div class="stats"><div class="stat"><strong>1,947</strong><span>Puzzles</span></div><div class="stat"><strong>79</strong><span>Years Since Independence</span></div><div class="stat"><strong>10</strong><span>Languages</span></div><div class="stat"><strong>1</strong><span>Human Family</span></div></div><div class="archive-carousel" aria-label="The complete 1947 India visual archive"><button class="carousel-arrow prev" type="button" aria-label="Previous puzzle">‹</button><div class="carousel-window"><div class="carousel-track" id="archiveTrack"></div></div><button class="carousel-arrow next" type="button" aria-label="Next puzzle">›</button></div><div class="carousel-meta"><span id="archiveCounter">38 archive images • complete collection</span><button class="shuffle-btn" type="button" id="shuffleArchive">⤨ Shuffle</button></div><div class="center-btn"><a class="btn" style="background:var(--navy);color:#fff;border-color:var(--navy)" target="_blank" rel="noopener" href="/HTML/india1947_freedom.html">Enter the 1947 Archive →</a></div></div></section>
+<section id="archive" class="archive"><div class="container"><div class="section-head"><div class="smallcaps">The Great Indian Mystery</div><h2>The 1947 Puzzle Archive</h2><p>1,947 puzzles. One journey through India's journey to freedom and constitutional democracy.</p></div><div class="stats"><div class="stat"><strong>1,947</strong><span>Puzzles</span></div><div class="stat"><strong>79</strong><span>Years Since Independence</span></div><div class="stat"><strong>10</strong><span>Languages</span></div><div class="stat"><strong>1</strong><span>Human Family</span></div></div><div class="archive-carousel" aria-label="The complete 1947 India visual archive"><button class="carousel-arrow prev" id="archivePrev" type="button" aria-label="Previous puzzle">‹</button><div class="carousel-window"><div class="carousel-track" id="archiveTrack"></div></div><button class="carousel-arrow next" id="archiveNext" type="button" aria-label="Next puzzle">›</button></div><div class="carousel-meta"><span id="archiveCounter">38 archive images • complete collection</span><button class="shuffle-btn" type="button" id="shuffleArchive">⤨ Shuffle</button></div><div class="center-btn"><a class="btn" style="background:var(--navy);color:#fff;border-color:var(--navy)" target="_blank" rel="noopener" href="/HTML/india1947_freedom.html">Enter the 1947 Archive →</a></div></div></section>
 <section id="mystery" class="mystery-language-section">
   <div class="container">
     <div class="section-head center">
@@ -445,9 +445,10 @@ Dr. Bhimrao Ramji Ambedkar's life connected education, social justice, constitut
 (function () {
   "use strict";
 
-  // The same 38-image collection used by the Lincoln/Trump archive.
-  // The two filenames that are clearly India-related are shown first.
-  // All 38 remain available; Shuffle randomizes all 38.
+  // Shared 38-image archive. Thumbnails and full-resolution files
+  // use the same names and directory structure as the Lincoln page.
+  const ARCHIVE_BASE = "https://trumpinmystery.com";
+
   const archiveImages = [
     "/images/thumbs/Word-Smith-Shashi-Tharoor.webp",
     "/images/thumbs/TN-07-CM-2026-001.webp",
@@ -491,108 +492,94 @@ Dr. Bhimrao Ramji Ambedkar's life connected education, social justice, constitut
 
   const track = document.getElementById("archiveTrack");
   const counter = document.getElementById("archiveCounter");
+  const prev = document.getElementById("archivePrev");
+  const next = document.getElementById("archiveNext");
   const shuffleButton = document.getElementById("shuffleArchive");
-  const previousButton = document.querySelector(".carousel-arrow.prev");
-  const nextButton = document.querySelector(".carousel-arrow.next");
 
-  if (!track || !counter || !shuffleButton || !previousButton || !nextButton) {
-    console.error("Ambedkar archive carousel: required elements not found.");
+  if (!track || !counter || !prev || !next || !shuffleButton) {
+    console.error("Ambedkar carousel: missing required HTML elements.");
     return;
   }
 
   let images = archiveImages.slice();
   let position = 0;
-  let timer = null;
 
   function visibleCount() {
-    if (window.innerWidth <= 520) return 2;
-    if (window.innerWidth <= 850) return 3;
+    if (window.innerWidth <= 600) return 2;
+    if (window.innerWidth <= 900) return 3;
     return 5;
   }
 
-  function fullImage(src) {
-    return ARCHIVE_BASE +
-      src.replace("/images/thumbs/", "/images/")
-         .replace(/\.webp$/i, ".png");
+  function fullUrl(path) {
+    return ARCHIVE_BASE + path;
   }
 
-  function updatePosition() {
-    const visible = visibleCount();
-    const maxPosition = Math.max(0, images.length - visible);
-    position = Math.max(0, Math.min(position, maxPosition));
+  function renderCarousel() {
+    track.innerHTML = images.map(function (thumbnail, index) {
+      const thumbUrl = fullUrl(thumbnail);
+      const fullPath = thumbnail.replace("/images/thumbs/", "/images/");
+      const fullUrlPath = fullUrl(fullPath);
 
-    track.style.transform =
-      "translate3d(-" + ((100 / visible) * position) + "%,0,0)";
-  }
-
-  function render() {
-    track.innerHTML = images.map(function (src, index) {
       return `
         <div class="carousel-slide">
-          <a href="${fullImage(src)}"
+          <a href="${fullUrlPath}"
              target="_blank"
              rel="noopener noreferrer"
              title="Open full-resolution archive image">
-            <img src="${src}"
-                 alt="Ambedkar Janata Party archive image ${index + 1}"
-                 loading="${index < 5 ? "eager" : "lazy"}">
+            <img src="${thumbUrl}"
+                 alt="Ambedkar archive image ${index + 1}"
+                 loading="${index < 5 ? "eager" : "lazy"}"
+                 referrerpolicy="no-referrer">
           </a>
         </div>
       `;
     }).join("");
 
-    position = 0;
-    updatePosition();
+    position = Math.min(position, Math.max(0, images.length - visibleCount()));
+    updateCarousel();
     counter.textContent = images.length + " archive images • complete collection";
   }
 
-  function shuffleAll() {
+  function updateCarousel() {
+    const visible = visibleCount();
+    const maxPosition = Math.max(0, images.length - visible);
+
+    position = Math.max(0, Math.min(position, maxPosition));
+
+    track.style.transform =
+      "translate3d(" + (-(position * (100 / visible))) + "%,0,0)";
+  }
+
+  prev.addEventListener("click", function () {
+    position = Math.max(0, position - 1);
+    updateCarousel();
+  });
+
+  next.addEventListener("click", function () {
+    const maxPosition = Math.max(0, images.length - visibleCount());
+    position = Math.min(maxPosition, position + 1);
+    updateCarousel();
+  });
+
+  shuffleButton.addEventListener("click", function () {
     for (let i = images.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [images[i], images[j]] = [images[j], images[i]];
     }
-    render();
-  }
-
-  function restartTimer() {
-    clearInterval(timer);
-    timer = setInterval(function () {
-      const maxPosition = Math.max(0, images.length - visibleCount());
-      position = position >= maxPosition ? 0 : position + 1;
-      updatePosition();
-    }, 5000);
-  }
-
-  previousButton.addEventListener("click", function () {
-    position = Math.max(0, position - 1);
-    updatePosition();
-    restartTimer();
+    position = 0;
+    renderCarousel();
   });
 
-  nextButton.addEventListener("click", function () {
+  window.addEventListener("resize", updateCarousel);
+
+  // Automatic movement through the complete collection.
+  setInterval(function () {
     const maxPosition = Math.max(0, images.length - visibleCount());
-    position = Math.min(maxPosition, position + 1);
-    updatePosition();
-    restartTimer();
-  });
+    position = position >= maxPosition ? 0 : position + 1;
+    updateCarousel();
+  }, 5000);
 
-  shuffleButton.addEventListener("click", function () {
-    shuffleAll();
-    restartTimer();
-  });
-
-  const carousel = document.querySelector(".archive-carousel");
-  if (carousel) {
-    carousel.addEventListener("mouseenter", function () {
-      clearInterval(timer);
-    });
-    carousel.addEventListener("mouseleave", restartTimer);
-  }
-
-  window.addEventListener("resize", updatePosition);
-
-  render();
-  restartTimer();
+  renderCarousel();
 })();
 </script>
 </body></html>
