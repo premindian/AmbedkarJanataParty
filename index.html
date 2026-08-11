@@ -445,10 +445,9 @@ Dr. Bhimrao Ramji Ambedkar's life connected education, social justice, constitut
 (function () {
   "use strict";
 
-  const ARCHIVE_BASE = "https://trumpinmystery.com";
-
-  // COMPLETE Ambedkar archive collection currently defined by this page.
-  // Lightweight thumbnails are displayed; clicking opens /images/xxx.webp.
+  // The same 38-image collection used by the Lincoln/Trump archive.
+  // The two filenames that are clearly India-related are shown first.
+  // All 38 remain available; Shuffle randomizes all 38.
   const archiveImages = [
     "/images/thumbs/Word-Smith-Shashi-Tharoor.webp",
     "/images/thumbs/TN-07-CM-2026-001.webp",
@@ -496,9 +495,12 @@ Dr. Bhimrao Ramji Ambedkar's life connected education, social justice, constitut
   const previousButton = document.querySelector(".carousel-arrow.prev");
   const nextButton = document.querySelector(".carousel-arrow.next");
 
-  if (!track || !counter || !shuffleButton || !previousButton || !nextButton) return;
+  if (!track || !counter || !shuffleButton || !previousButton || !nextButton) {
+    console.error("Ambedkar archive carousel: required elements not found.");
+    return;
+  }
 
-  let images = [...archiveImages];
+  let images = archiveImages.slice();
   let position = 0;
   let timer = null;
 
@@ -520,24 +522,20 @@ Dr. Bhimrao Ramji Ambedkar's life connected education, social justice, constitut
     position = Math.max(0, Math.min(position, maxPosition));
 
     track.style.transform =
-      "translateX(-" + ((100 / visible) * position) + "%)";
+      "translate3d(-" + ((100 / visible) * position) + "%,0,0)";
   }
 
   function render() {
     track.innerHTML = images.map(function (src, index) {
       return `
         <div class="carousel-slide">
-          <a
-            href="${fullImage(src)}"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Open full-resolution archive image"
-          >
-            <img
-              src="${src}"
-              alt="Ambedkar Janata Party archive image ${index + 1}"
-              loading="${index < 5 ? "eager" : "lazy"}"
-            >
+          <a href="${fullImage(src)}"
+             target="_blank"
+             rel="noopener noreferrer"
+             title="Open full-resolution archive image">
+            <img src="${src}"
+                 alt="Ambedkar Janata Party archive image ${index + 1}"
+                 loading="${index < 5 ? "eager" : "lazy"}">
           </a>
         </div>
       `;
@@ -545,47 +543,35 @@ Dr. Bhimrao Ramji Ambedkar's life connected education, social justice, constitut
 
     position = 0;
     updatePosition();
-    counter.textContent =
-      images.length + " archive images • complete collection";
+    counter.textContent = images.length + " archive images • complete collection";
   }
 
   function shuffleAll() {
-    // Shuffle the COMPLETE 38-image collection.
-    // The India-first ordering applies only to the initial view.
     for (let i = images.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [images[i], images[j]] = [images[j], images[i]];
     }
     render();
   }
-    render();
-  }
 
   function restartTimer() {
     clearInterval(timer);
-
     timer = setInterval(function () {
-      const maxPosition =
-        Math.max(0, images.length - visibleCount());
-
-      if (position >= maxPosition) {
-        position = 0;
-      } else {
-        position++;
-      }
-
+      const maxPosition = Math.max(0, images.length - visibleCount());
+      position = position >= maxPosition ? 0 : position + 1;
       updatePosition();
     }, 5000);
   }
 
   previousButton.addEventListener("click", function () {
-    position--;
+    position = Math.max(0, position - 1);
     updatePosition();
     restartTimer();
   });
 
   nextButton.addEventListener("click", function () {
-    position++;
+    const maxPosition = Math.max(0, images.length - visibleCount());
+    position = Math.min(maxPosition, position + 1);
     updatePosition();
     restartTimer();
   });
@@ -596,15 +582,11 @@ Dr. Bhimrao Ramji Ambedkar's life connected education, social justice, constitut
   });
 
   const carousel = document.querySelector(".archive-carousel");
-
   if (carousel) {
     carousel.addEventListener("mouseenter", function () {
       clearInterval(timer);
     });
-
-    carousel.addEventListener("mouseleave", function () {
-      restartTimer();
-    });
+    carousel.addEventListener("mouseleave", restartTimer);
   }
 
   window.addEventListener("resize", updatePosition);
