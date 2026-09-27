@@ -1,4 +1,11 @@
 <!DOCTYPE html><html lang="en"><head>
+    <!-- mystery-glass -->
+    <style id="mystery-glass-boot">html.mystery-glass-on{cursor:wait}html.mystery-glass-on::before{content:"";position:fixed;inset:0;z-index:2147483645;pointer-events:none!important;background:rgba(12,16,28,.78)}</style>
+    <script>try{if(sessionStorage.getItem("ambedkarMysteryGlass")==="1")document.documentElement.classList.add("mystery-glass-on")}catch(e){}</script>
+    <script src="mystery-glass.js?v=ipadnav11"></script>
+    <script src="ios-page-nav.js?v=11"></script>
+    <!-- /mystery-glass -->
+
     <!--
       COPYRIGHT NOTICE
       This is copyrighted content involving many years of laborious work.
@@ -112,6 +119,47 @@
 @media(max-width:700px){
   .language-mystery-grid{grid-template-columns:repeat(2,1fr)}
 }
+.mystery-room-grid{
+  margin-top:34px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+.mystery-room{
+  text-decoration:none;
+  color:#fff;
+  padding:18px 18px 16px;
+  border:1px solid #e8d5aa44;
+  border-radius:16px;
+  background:linear-gradient(180deg,#ffffff12,#ffffff08);
+  min-height:118px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  transition:.22s;
+}
+.mystery-room:hover{
+  transform:translateY(-3px);
+  border-color:#e8d5a8;
+  box-shadow:0 12px 28px #0004;
+  background:#e8d5aa14;
+}
+.mystery-room .mr-no{
+  font:900 .68rem Arial,sans-serif;
+  letter-spacing:.16em;
+  color:#e8d5aa;
+}
+.mystery-room strong{
+  font:800 1.02rem Georgia,serif;
+  line-height:1.25;
+}
+.mystery-room span:last-child{
+  color:#d5d9df;
+  font-size:.88rem;
+  line-height:1.4;
+}
+@media(max-width:700px){.mystery-room-grid{grid-template-columns:1fr}}
+
 </style>
 
 <style>
@@ -269,14 +317,558 @@ img,video,iframe{max-width:100%}
     font-size:1.4rem;
   }
 }
+
+/* KaryaLekha — the grassroots movement CTA */
+.hero-actions,.kl-hero-cta{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+  margin-top:28px;
+}
+.kl-hero-cta{
+  margin:0;
+  padding:28px 16px 34px;
+  background:linear-gradient(180deg,#101d32 0%,#172944 100%);
+  border-bottom:1px solid #b28a4844;
+}
+.btn-karyalekha{
+  position:relative;
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  padding:22px 40px;
+  min-width:min(92vw,460px);
+  border-radius:999px;
+  text-decoration:none;
+  color:#101d32;
+  background:linear-gradient(135deg,#fff6d8 0%,#e8d5aa 45%,#c9a24a 100%);
+  border:2px solid rgba(255,255,255,.55);
+  box-shadow:0 0 0 0 rgba(226,184,84,.5),0 18px 42px rgba(0,0,0,.35);
+  animation:klPulse 2.2s ease-in-out infinite;
+  font:900 clamp(1.2rem,4.2vw,1.85rem) Arial,sans-serif;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  line-height:1.05;
+  text-align:center;
+  z-index:2;
+}
+.btn-karyalekha .kl-sub{
+  font:700 .72rem Arial,sans-serif;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  opacity:.78;
+}
+.btn-karyalekha:hover{
+  color:#0a1321;
+  filter:brightness(1.05);
+}
+@keyframes klPulse{
+  0%,100%{transform:translateY(0) scale(1);box-shadow:0 0 0 0 rgba(226,184,84,.55),0 18px 42px rgba(0,0,0,.35)}
+  50%{transform:translateY(-4px) scale(1.035);box-shadow:0 0 0 16px rgba(226,184,84,0),0 22px 50px rgba(0,0,0,.42)}
+}
+@media (prefers-reduced-motion:reduce){
+  .btn-karyalekha{animation:none}
+}
+.kl-movement{background:var(--cream)}
+.kl-movement .section-head{max-width:820px;margin-left:auto;margin-right:auto;text-align:center}
+.kl-movement .hero-actions{margin-top:8px}
+</style>
+<style id="journey-story-css">
+
+.archive-rooms{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px;
+}
+.archive-room{
+  display:block;text-decoration:none;color:#fff;
+  min-height:220px;padding:24px 22px;position:relative;overflow:hidden;
+  background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.03));
+  border:1px solid #e8d5aa33;border-radius:18px;
+  transition:transform .22s ease,border-color .22s,box-shadow .22s;
+}
+.archive-room:hover{
+  transform:translateY(-6px);border-color:#e8d5a8;
+  box-shadow:0 18px 36px #0005;
+}
+.archive-room .no{
+  font:800 .68rem Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#e8d5aa;
+}
+.archive-room h3{
+  font:700 1.22rem Georgia,serif;margin:14px 0 8px;color:#fff;line-height:1.25;
+}
+.archive-room p{margin:0;color:#c9d0da;font-size:.95rem;line-height:1.45}
+.archive-room.enter{
+  background:linear-gradient(160deg,rgba(178,138,72,.28),rgba(16,29,50,.45));
+  border-color:#e8d5a8;
+}
+@media(max-width:900px){.archive-rooms{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.archive-rooms{grid-template-columns:1fr}}
+
+
+.volume-card{
+  padding:24px 22px;
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));
+  border:1px solid #ffffff14;border-radius:16px;
+}
+.volume-files{
+  display:flex;flex-direction:column;gap:7px;margin-top:16px;
+}
+.volume-files a{
+  text-decoration:none;color:#e8d5aa;
+  font:700 .82rem Arial,sans-serif;letter-spacing:.02em;
+  padding:8px 10px;border-radius:10px;background:#ffffff0c;
+  border:1px solid #e8d5aa33;
+}
+.volume-files a:hover{
+  background:#e8d5aa22;border-color:#e8d5a8;color:#fff;
+}
+
+.journey-story{
+  background:linear-gradient(180deg,#0f1a2e 0%,#162844 52%,#101d32 100%);
+  color:#fff;
+  padding:92px 0 88px;
+  border-top:1px solid #b28a4844;
+  border-bottom:1px solid #b28a4844;
+}
+.journey-story .section-head{max-width:860px;margin:0 auto 28px;text-align:center}
+.journey-story .smallcaps{color:#e8d5aa}
+.journey-story h2{color:#fff;font-size:clamp(2.1rem,5vw,3.8rem);margin:10px 0 16px}
+.journey-story .section-head p{color:#d5d9df;max-width:760px;margin:0 auto;font-size:1.08rem}
+.journey-years{
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  color:#e8d5aa;font:900 1.35rem Arial,sans-serif;letter-spacing:.18em;
+  margin:8px 0 22px;
+}
+.journey-years span.arrow{opacity:.55}
+.dedication{
+  max-width:860px;margin:0 auto 22px;padding:22px 24px;
+  background:rgba(255,255,255,.06);
+  border:1px solid #e8d5aa33;border-left:4px solid #e8d5aa;
+  border-radius:16px;color:#f7f1e5;line-height:1.7;
+}
+.dedication p{margin:0 0 12px}
+.dedication p:last-child{margin:0}
+.dedication strong{color:#fff}
+.dedication .gold-note{color:#fff7c7}
+.india-us-note{
+  max-width:860px;margin:0 auto 28px;padding:20px 24px;
+  background:rgba(232,213,168,.08);border:1px solid #e8d5aa44;border-radius:16px;
+  color:#d5d9df;text-align:center;
+}
+.india-us-note strong{color:#e8d5aa}
+.volume-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px;
+}
+a.volume-card{
+  text-decoration:none;color:#fff;display:block;
+  padding:24px 22px;min-height:190px;
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));
+  border:1px solid #ffffff14;border-radius:16px;
+  transition:.22s;
+}
+a.volume-card:hover{
+  transform:translateY(-4px);border-color:#e8d5a8;
+  box-shadow:0 16px 32px #0005;background:#e8d5aa14;
+}
+.volume-card .vt{
+  font:800 .72rem Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;
+  color:#e8d5aa;margin-bottom:8px;
+}
+.volume-card h3{margin:0 0 10px;font-size:1.28rem;line-height:1.2;color:#fff}
+.volume-card p{margin:0;color:#c9d0da;font-size:.95rem;line-height:1.5}
+.volume-card .go{display:block;margin-top:14px;color:#e8d5aa;font:800 .72rem Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.journey-cta{text-align:center;margin-top:34px}
+.journey-cta .btn{background:#e8d5aa;color:#101d32;border-color:#e8d5aa}
+.journey-cta .btn:hover{background:#fff;border-color:#fff}
+@media(max-width:900px){.volume-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.journey-story{padding:68px 0}}
 </style>
 </head><body>
 <nav><div class="container nav-inner"><a class="brand" href="#top">AMBEDKAR JANATA PARTY</a><div class="nav-links">
-<a href="#archive">Archive</a><a href="#mystery">Mystery</a><a href="#song">Song</a><a href="#film">Film</a>
-<a href="#ambedkar">Ambedkar</a><a href="#help">Book of Help</a><a href="#participate">Participate</a></div></div></nav>
+<a href="#archive">Archive</a><a href="#story">Story</a><a href="#galleries">Galleries</a><a href="#mystery">Mystery</a><a href="#song">Song</a><a href="#film">Film</a>
+<a href="#ambedkar">Ambedkar</a><a href="#help">Book of Help</a>
+<a href="https://karyalekha.ambedkarjanataparty.in?from=https://ambedkarjanataparty.in">KaryaLekha</a></div></div></nav>
 <main id="top">
-<section class="hero"><div class="container hero-content"><div class="smallcaps">A People's Constitution • A People's History • A People's Movement</div><h1>Ambedkar<br>Janata Party</h1><div class="tagline">Liberty • Equality • Fraternity • Human Dignity</div><div class="year">1947 — 2026</div><div class="btns"><a class="btn primary" href="#archive">Explore the Archive</a><a class="btn secondary" href="#participate">Join the Movement</a></div></div></section>
-<section id="archive" class="archive"><div class="container"><div class="section-head"><div class="smallcaps">The Great Indian Mystery</div><h2>The 1947 Puzzle Archive</h2><p>1,947 puzzles. One journey through India's journey to freedom and constitutional democracy.</p></div><div class="stats"><div class="stat"><strong>1,947</strong><span>Puzzles</span></div><div class="stat"><strong>79</strong><span>Years Since Independence</span></div><div class="stat"><strong>10</strong><span>Languages</span></div><div class="stat"><strong>1</strong><span>Human Family</span></div></div><div class="archive-carousel" aria-label="The complete 1947 India visual archive"><button class="carousel-arrow prev" id="archivePrev" type="button" aria-label="Previous puzzle">‹</button><div class="carousel-window"><div class="carousel-track" id="archiveTrack"></div></div><button class="carousel-arrow next" id="archiveNext" type="button" aria-label="Next puzzle">›</button></div><div class="carousel-meta"><span id="archiveCounter">50 archive images • complete collection</span><button class="shuffle-btn" type="button" id="shuffleArchive">⤨ Shuffle</button></div><div class="center-btn"><a class="btn" style="background:var(--navy);color:#fff;border-color:var(--navy)" target="_blank" rel="noopener" href="/HTML/India1947_Freedom.html">Enter the 1947 Archive →</a></div></div></section>
+<section class="hero"><div class="container hero-content"><div class="smallcaps">A People's Constitution • A People's History • A People's Movement</div><h1>Ambedkar<br>Janata Party</h1><div class="tagline">Liberty • Equality • Fraternity • Human Dignity</div><div class="year">1947 — 2026</div><div class="hero-actions"><a class="btn-karyalekha" href="https://karyalekha.ambedkarjanataparty.in?from=https://ambedkarjanataparty.in"><span>KaryaLekha</span><span class="kl-sub">The Grassroots Movement →</span></a><a class="btn secondary" href="#archive">Explore the Archive</a></div></div></section>
+<section id="archive" class="archive"><div class="container"><div class="section-head"><div class="smallcaps">The Great Indian Mystery</div><h2>The 1947 Puzzle Archive</h2><p>1,947 puzzles. One journey through India's journey to freedom and constitutional democracy.</p></div><div class="stats"><div class="stat"><strong>1,947</strong><span>Puzzles</span></div><div class="stat"><strong>79</strong><span>Years Since Independence</span></div><div class="stat"><strong>10</strong><span>Languages</span></div><div class="stat"><strong>1</strong><span>Human Family</span></div></div><div class="archive-carousel" aria-label="The complete 1947 India visual archive"><button class="carousel-arrow prev" id="archivePrev" type="button" aria-label="Previous puzzle">‹</button><div class="carousel-window"><div class="carousel-track" id="archiveTrack"></div></div><button class="carousel-arrow next" id="archiveNext" type="button" aria-label="Next puzzle">›</button></div><div class="carousel-meta"><span id="archiveCounter">50 archive images • complete collection</span><button class="shuffle-btn" type="button" id="shuffleArchive">⤨ Shuffle</button></div><div class="center-btn"><a class="btn" style="background:var(--navy);color:#fff;border-color:var(--navy)" href="#story">Open the 1947 Story →</a></div></div></section>
+
+<section id="story" class="journey-story">
+  <div class="container">
+    <div class="section-head">
+      <div class="smallcaps">The Great Indian–American Journey</div>
+      <h2>From Independence to the Constitution</h2>
+      <div class="journey-years"><span>1947</span><span class="arrow">→</span><span>2026</span></div>
+      <p>In 1947, India entered a new chapter as an independent nation. From that turning point to 2026, this archive explores India’s people, Dr. B. R. Ambedkar’s constitutional promise of liberty, equality and fraternity, and the living relationship between India and the United States.</p>
+    </div>
+
+    <div class="dedication">
+      <p><em>“Always be a Good Samaritan.”</em> Dedicated with profound love and honor to my mother, <strong>Konatham Balamani</strong>, whose timeless words guided this journey through every shadow. To my father <strong>Jesudaya</strong> for telling me about Dr. B.R. Ambedkar at a tender age.</p>
+      <p>My heartfelt gratitude to Uncle Jeevaratnam Vallabha for encouraging me to think deeply about alphabets, numbers, and the mysteries they may reveal. A remarkable sequence of connections—from my engineering collegemate Rajesh, to a chain of three people—ultimately led me to meet Uncle Jeevaratnam on number 21. Looking back, that meeting proved to be a key turning point in helping me uncover and understand the grand puzzle timeline that had been unfolding all along.</p>
+      <p class="gold-note"><strong>The 9/11 Chronological Nexus:</strong> The genesis of this architecture rests on a synchronized matrix. It ties the moment President George W. Bush stood on alphabets and numbers on 9/11 straight to the exact 9th anniversary of 9/11, when Anveshi set foot for the first time on US soil in New York. One year later, on 9/11 IST in 2011, a son—Prince Rafael Aman—was born in Royal Oak, Michigan, igniting this grand computational library.</p>
+      <p>Forged in solitary persistence in India while living under a cracked ceiling in a humble room costing just 3000 rupees per month since November 2021—a ceiling that finally collapsed entirely into his room on February 8, 2026. When there was no money to buy even simple $10 storybooks for my son at 6 years old, love forced my hand to spend five years mapmaking this entire alphanumeric universe for him.</p>
+    </div>
+
+    <div class="india-us-note">
+      <p><strong>🇮🇳 INDIA × 🇺🇸 UNITED STATES</strong></p>
+      <p>India’s story does not end at independence. The decades after 1947 opened a growing relationship with the United States through students, scientists, engineers, entrepreneurs, doctors, families, artists and communities.</p>
+      <p><strong>Two democracies. Many connections. One human conversation.</strong></p>
+    </div>
+
+    <div class="section-head" id="galleries" style="margin-bottom:18px">
+      <div class="smallcaps">Inside the Archive</div>
+      <h2 style="font-size:clamp(1.8rem,4vw,2.6rem)">Rooms of a living codex</h2>
+      <p>68 galleries, in journey order — the same path as Prev / Next, so the house walks as one road.</p>
+    </div>
+    <div class="archive-rooms">
+      <a class="archive-room enter" href="HTML/India-Mystery-001.html">
+        <div class="no">Gallery 01 · Begin here</div>
+        <h3>Love India: Mystery Codes Uncovered</h3>
+        <p>India's alphabet alignments, first chamber.</p>
+      </a>
+      <a class="archive-room" href="HTML/India-Mystery-002.html">
+        <div class="no">Gallery 02</div>
+        <h3>Love India: Mystery Codes — II</h3>
+        <p>The second Indian mystery chamber.</p>
+      </a>
+      <a class="archive-room" href="HTML/India-Mystery-003.html">
+        <div class="no">Gallery 03</div>
+        <h3>Love India: Mystery Codes — III</h3>
+        <p>The third Indian mystery chamber.</p>
+      </a>
+      <a class="archive-room" href="HTML/Konatham-family-01.html">
+        <div class="no">Gallery 04</div>
+        <h3>The Untold Alphabet of Konatham Family — I</h3>
+        <p>Love, history, and the India–America alphabetic bridge.</p>
+      </a>
+      <a class="archive-room" href="HTML/Konatham-family-02.html">
+        <div class="no">Gallery 05</div>
+        <h3>The Untold Alphabet of Konatham Family — II</h3>
+        <p>The family chronicle, second chamber.</p>
+      </a>
+      <a class="archive-room" href="HTML/UK-Royals-Mystery.html">
+        <div class="no">Gallery 06</div>
+        <h3>Untold Alphabets of the United Kingdom</h3>
+        <p>Crown, whisper, and the royal number systems.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-001.html">
+        <div class="no">Gallery 07</div>
+        <h3>The First Scroll</h3>
+        <p>President Donald Trump — Part I.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-002.html">
+        <div class="no">Gallery 08</div>
+        <h3>The Second Scroll</h3>
+        <p>President Donald Trump — Part II.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-003.html">
+        <div class="no">Gallery 09</div>
+        <h3>The Third Scroll</h3>
+        <p>President Donald Trump — Part III.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-004.html">
+        <div class="no">Gallery 10</div>
+        <h3>The Fourth Scroll</h3>
+        <p>President Donald Trump — Part IV.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-005.html">
+        <div class="no">Gallery 11</div>
+        <h3>The Fifth Scroll</h3>
+        <p>President Donald Trump — Part V.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-006.html">
+        <div class="no">Gallery 12</div>
+        <h3>The Sixth Scroll</h3>
+        <p>President Donald Trump — Part VI.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-007.html">
+        <div class="no">Gallery 13</div>
+        <h3>The Seventh Scroll</h3>
+        <p>President Donald Trump — Part VII.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-008.html">
+        <div class="no">Gallery 14</div>
+        <h3>The Eighth Scroll</h3>
+        <p>President Donald Trump — Part VIII.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-009.html">
+        <div class="no">Gallery 15</div>
+        <h3>The Ninth Scroll</h3>
+        <p>President Donald Trump — Part IX.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-10.html">
+        <div class="no">Gallery 16</div>
+        <h3>The Tenth Scroll</h3>
+        <p>President Donald Trump — Part Tenth.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-11.html">
+        <div class="no">Gallery 17</div>
+        <h3>The Eleventh Scroll</h3>
+        <p>President Donald Trump — Part Eleventh.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-12.html">
+        <div class="no">Gallery 18</div>
+        <h3>The Twelfth Scroll</h3>
+        <p>President Donald Trump — Part Twelfth.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-13.html">
+        <div class="no">Gallery 19</div>
+        <h3>The Thirteenth Scroll</h3>
+        <p>President Donald Trump — Part Thirteenth.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-14.html">
+        <div class="no">Gallery 20</div>
+        <h3>The Fourteenth Scroll</h3>
+        <p>President Donald Trump — Part Fourteenth.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-15.html">
+        <div class="no">Gallery 21</div>
+        <h3>The Fifteenth Scroll</h3>
+        <p>President Donald Trump — Part Fifteenth.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-16.html">
+        <div class="no">Gallery 22</div>
+        <h3>The Sixteenth Scroll</h3>
+        <p>President Donald Trump — Part Sixteenth.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-17.html">
+        <div class="no">Gallery 23</div>
+        <h3>The Seventeenth Scroll</h3>
+        <p>President Donald Trump — Part Seventeenth.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-18.html">
+        <div class="no">Gallery 24</div>
+        <h3>The Eighteenth Scroll</h3>
+        <p>President Donald Trump — Part Eighteenth.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-19.html">
+        <div class="no">Gallery 25</div>
+        <h3>The Nineteenth Scroll</h3>
+        <p>President Donald Trump — Part Nineteenth.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-20.html">
+        <div class="no">Gallery 26</div>
+        <h3>The Twentieth Scroll</h3>
+        <p>President Donald Trump — Part XX.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-21.html">
+        <div class="no">Gallery 27</div>
+        <h3>The Twenty-First Scroll</h3>
+        <p>President Donald Trump — Part XXI.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-22.html">
+        <div class="no">Gallery 28</div>
+        <h3>The Twenty-Second Scroll</h3>
+        <p>President Donald Trump — Part XXII.</p>
+      </a>
+      <a class="archive-room" href="HTML/Trump-Master-File-23.html">
+        <div class="no">Gallery 29</div>
+        <h3>The Twenty-Third Scroll</h3>
+        <p>President Donald Trump — Part XXIII.</p>
+      </a>
+      <a class="archive-room" href="HTML/Princess-Anveshi-001.html">
+        <div class="no">Gallery 30</div>
+        <h3>America’s First Princess — Part I</h3>
+        <p>Princess Anveshi, chamber 1 of nine.</p>
+      </a>
+      <a class="archive-room" href="HTML/Princess-Anveshi-002.html">
+        <div class="no">Gallery 31</div>
+        <h3>America’s First Princess — Part II</h3>
+        <p>Princess Anveshi, chamber 2 of nine.</p>
+      </a>
+      <a class="archive-room" href="HTML/Princess-Anveshi-003.html">
+        <div class="no">Gallery 32</div>
+        <h3>America’s First Princess — Part III</h3>
+        <p>Princess Anveshi, chamber 3 of nine.</p>
+      </a>
+      <a class="archive-room" href="HTML/Princess-Anveshi-004.html">
+        <div class="no">Gallery 33</div>
+        <h3>America’s First Princess — Part IV</h3>
+        <p>Princess Anveshi, chamber 4 of nine.</p>
+      </a>
+      <a class="archive-room" href="HTML/Princess-Anveshi-005.html">
+        <div class="no">Gallery 34</div>
+        <h3>America’s First Princess — Part V</h3>
+        <p>Princess Anveshi, chamber 5 of nine.</p>
+      </a>
+      <a class="archive-room" href="HTML/Princess-Anveshi-006.html">
+        <div class="no">Gallery 35</div>
+        <h3>America’s First Princess — Part VI</h3>
+        <p>Princess Anveshi, chamber 6 of nine.</p>
+      </a>
+      <a class="archive-room" href="HTML/Princess-Anveshi-007.html">
+        <div class="no">Gallery 36</div>
+        <h3>America’s First Princess — Part VII</h3>
+        <p>Princess Anveshi, chamber 7 of nine.</p>
+      </a>
+      <a class="archive-room" href="HTML/Princess-Anveshi-008.html">
+        <div class="no">Gallery 37</div>
+        <h3>America’s First Princess — Part VIII</h3>
+        <p>Princess Anveshi, chamber 8 of nine.</p>
+      </a>
+      <a class="archive-room" href="HTML/Princess-Anveshi-009.html">
+        <div class="no">Gallery 38</div>
+        <h3>America’s First Princess — Part IX</h3>
+        <p>Princess Anveshi, chamber 9 of nine.</p>
+      </a>
+      <a class="archive-room" href="HTML/US-Prince-Rafael-001.html">
+        <div class="no">Gallery 39</div>
+        <h3>Prince Rafael Aman — Part I</h3>
+        <p>The 2011 heir, chamber 1 of eight.</p>
+      </a>
+      <a class="archive-room" href="HTML/US-Prince-Rafael-002.html">
+        <div class="no">Gallery 40</div>
+        <h3>Prince Rafael Aman — Part II</h3>
+        <p>The 2011 heir, chamber 2 of eight.</p>
+      </a>
+      <a class="archive-room" href="HTML/US-Prince-Rafael-003.html">
+        <div class="no">Gallery 41</div>
+        <h3>Prince Rafael Aman — Part III</h3>
+        <p>The 2011 heir, chamber 3 of eight.</p>
+      </a>
+      <a class="archive-room" href="HTML/US-Prince-Rafael-004.html">
+        <div class="no">Gallery 42</div>
+        <h3>Prince Rafael Aman — Part IV</h3>
+        <p>The 2011 heir, chamber 4 of eight.</p>
+      </a>
+      <a class="archive-room" href="HTML/US-Prince-Rafael-005.html">
+        <div class="no">Gallery 43</div>
+        <h3>Prince Rafael Aman — Part V</h3>
+        <p>The 2011 heir, chamber 5 of eight.</p>
+      </a>
+      <a class="archive-room" href="HTML/US-Prince-Rafael-006.html">
+        <div class="no">Gallery 44</div>
+        <h3>Prince Rafael Aman — Part VI</h3>
+        <p>The 2011 heir, chamber 6 of eight.</p>
+      </a>
+      <a class="archive-room" href="HTML/US-Prince-Rafael-007.html">
+        <div class="no">Gallery 45</div>
+        <h3>Prince Rafael Aman — Part VII</h3>
+        <p>The 2011 heir, chamber 7 of eight.</p>
+      </a>
+      <a class="archive-room" href="HTML/US-Prince-Rafael-008.html">
+        <div class="no">Gallery 46</div>
+        <h3>Prince Rafael Aman — Part VIII</h3>
+        <p>The 2011 heir, chamber 8 of eight.</p>
+      </a>
+      <a class="archive-room" href="HTML/Jeff-Bezos-mystery.html">
+        <div class="no">Gallery 47</div>
+        <h3>Venice, Memory, and Public Life</h3>
+        <p>The Bezos–Sanchez scroll.</p>
+      </a>
+      <a class="archive-room" href="HTML/Charlie-Kirk-Mystery.html">
+        <div class="no">Gallery 48</div>
+        <h3>The Charlie Kirk Mystery</h3>
+        <p>Faith, public life, and the echoes of modern America.</p>
+      </a>
+      <a class="archive-room" href="HTML/India-Democracy2024-1.html">
+        <div class="no">Gallery 49</div>
+        <h3>Love India: Democracy 2024 — I</h3>
+        <p>Electoral alignments written as letters and totals.</p>
+      </a>
+      <a class="archive-room" href="HTML/India-Democracy2024-2.html">
+        <div class="no">Gallery 50</div>
+        <h3>Love India: Democracy 2024 — II</h3>
+        <p>The second democracy scroll.</p>
+      </a>
+      <a class="archive-room" href="HTML/India-Mystery-Code-001.html">
+        <div class="no">Gallery 51</div>
+        <h3>India Mystery Code — I</h3>
+        <p>The first coded India scroll.</p>
+      </a>
+      <a class="archive-room" href="HTML/India-Mystery-Code-002.html">
+        <div class="no">Gallery 52</div>
+        <h3>India Mystery Code — II</h3>
+        <p>The second coded India scroll.</p>
+      </a>
+      <a class="archive-room" href="HTML/Mystery_India_Part_I.html">
+        <div class="no">Gallery 53</div>
+        <h3>The Mystery Code of India — I</h3>
+        <p>India's first mystery-code chamber.</p>
+      </a>
+      <a class="archive-room" href="HTML/Mystery_India_Part_II.html">
+        <div class="no">Gallery 54</div>
+        <h3>The Mystery Code of India — II</h3>
+        <p>The second Indian code scroll.</p>
+      </a>
+      <a class="archive-room" href="HTML/Mystery_India_PartIII.html">
+        <div class="no">Gallery 55</div>
+        <h3>The Mystery Code of India — III</h3>
+        <p>The third Indian code scroll.</p>
+      </a>
+      <a class="archive-room" href="HTML/World_Mystery_Code_I.html">
+        <div class="no">Gallery 56</div>
+        <h3>The Mystery Code of the World — I</h3>
+        <p>The first world-code chamber.</p>
+      </a>
+      <a class="archive-room" href="HTML/World_Mystery_Code_II.html">
+        <div class="no">Gallery 57</div>
+        <h3>The Mystery Code of the World — II</h3>
+        <p>The second world-code chamber.</p>
+      </a>
+      <a class="archive-room" href="HTML/USA-Israel-Mystery.html">
+        <div class="no">Gallery 58</div>
+        <h3>America and Israel</h3>
+        <p>The mystery of America and Israel.</p>
+      </a>
+      <a class="archive-room" href="HTML/Mystery-Konatham-Fm-I.html">
+        <div class="no">Gallery 59</div>
+        <h3>One India Family — I</h3>
+        <p>The Konatham family mystery, first chamber.</p>
+      </a>
+      <a class="archive-room" href="HTML/Mystery-Konatham-FmII.html">
+        <div class="no">Gallery 60</div>
+        <h3>One India Family — II</h3>
+        <p>The Konatham family mystery, second chamber.</p>
+      </a>
+      <a class="archive-room" href="HTML/Banana-Mystery_Code.html">
+        <div class="no">Gallery 61</div>
+        <h3>The Mystery Code of Banana</h3>
+        <p>A coded fruit, a coded people, a coded time.</p>
+      </a>
+      <a class="archive-room" href="HTML/India-Celebration-I.html">
+        <div class="no">Gallery 62</div>
+        <h3>India: Many Voices</h3>
+        <p>Celebration of India, part I.</p>
+      </a>
+      <a class="archive-room" href="HTML/India-Celebration-II.html">
+        <div class="no">Gallery 63</div>
+        <h3>India: Stories of Time</h3>
+        <p>Celebration of India, part II.</p>
+      </a>
+      <a class="archive-room" href="HTML/India-UK-US-Threads.html">
+        <div class="no">Gallery 64</div>
+        <h3>India, UK and US: Royal Threads</h3>
+        <p>Three homelands, one alphabetic weave.</p>
+      </a>
+      <a class="archive-room" href="HTML/India-US-Journey-I.html">
+        <div class="no">Gallery 65</div>
+        <h3>India &amp; US: Memory, Journey &amp; Hope</h3>
+        <p>The India–America journey, part I.</p>
+      </a>
+      <a class="archive-room" href="HTML/India-US-Journey-II.html">
+        <div class="no">Gallery 66</div>
+        <h3>President Trump and India Times</h3>
+        <p>The India–America journey, part II.</p>
+      </a>
+      <a class="archive-room" href="HTML/bookofhelp.html">
+        <div class="no">Gallery 67</div>
+        <h3>225 Social Impact Puzzles</h3>
+        <p>India × America — tools that could serve people who need them most.</p>
+      </a>
+      <a class="archive-room" href="#mystery">
+        <div class="no">Gallery 68</div>
+        <h3>Ten-Language Codex</h3>
+        <p>Hebrew, English, Telugu, Greek, and six sister scripts.</p>
+      </a>
+    </div>
+
+    <div class="journey-cta">
+      <a class="btn primary" href="HTML/India-Mystery-001.html">Begin the 1,947-puzzle journey →</a>
+    </div>
+  </div>
+</section>
 <section id="mystery" class="mystery-language-section">
   <div class="container">
     <div class="section-head center">
@@ -308,6 +900,7 @@ img,video,iframe{max-width:100%}
       <b>•</b>
       <span>ONE JOURNEY</span>
     </div>
+
   </div>
 </section>
 <section id="song" class="song"><div class="container"><div class="section-head"><div class="smallcaps">🇺🇸 India • Freedom & Constitution</div><h2>Freedom Song</h2><p style="color:#d5d9df">A musical journey through Indian history, freedom and the unfinished promise of equality.</p></div><details class="flag-toggle"><summary class="flag-summary">
@@ -444,12 +1037,23 @@ Dr. Bhimrao Ramji Ambedkar's life connected education, social justice, constitut
     <p>The Book of Help turns social problems into buildable puzzles. The next step is for people with capital, technology and community relationships to open one and say: <strong>“Let's build this.”</strong></p>
     <div class="btns">
       <a class="btn primary" target="_blank" rel="noopener" href="225_book_of_help.html">Open the 225 Puzzles</a>
-      <a class="btn secondary" href="#participate">Support the Project</a>
+      <a class="btn secondary" href="#karyalekha">Open KaryaLekha</a>
     </div>
   </div>
 </div>
 </section>
-<section id="participate" class="participate"><div class="container"><div class="section-head center"><div class="smallcaps">Take Part</div><h2>Join Ambedkar Janata Party</h2><p>If you believe India's future should be built around constitutional equality, liberty, education and human dignity, there is a place for you here.</p></div><div class="cards"><div class="card"><div class="icon">🤝</div><h3>Join</h3><p>Learn about the movement and how people can participate.</p></div><div class="card"><div class="icon">🛠️</div><h3>Volunteer</h3><p>Help with the archive, technology, creative work and community projects.</p></div><div class="card"><div class="icon">💡</div><h3>Build</h3><p>Help turn Book of Help concepts into useful applications.</p></div><div class="card"><div class="icon">❤️</div><h3>Support</h3><p>Support the work transparently and learn how contributions are used.</p></div></div></div></section>
+<section id="karyalekha" class="kl-movement"><div class="container"><div class="section-head">
+    <div class="smallcaps">The Grassroots Movement</div>
+    <h2>KaryaLekha</h2>
+    <p>This is how the movement works on the ground — workers log issues facing the downtrodden, capture field work, and keep election-process funds separate from welfare.</p>
+  </div>
+  <div class="hero-actions">
+    <a class="btn-karyalekha" href="https://karyalekha.ambedkarjanataparty.in?from=https://ambedkarjanataparty.in">
+      <span>Enter KaryaLekha</span>
+      <span class="kl-sub">Field workers • Ledgers • Dignity →</span>
+    </a>
+  </div>
+</div></section>
 <section class="quotes"><div class="container"><div class="section-head center">
 <div class="smallcaps">Words That Endured</div><h2>Ambedkar's Voice</h2></div>
 <div class="quote-grid">
@@ -458,7 +1062,7 @@ Dr. Bhimrao Ramji Ambedkar's life connected education, social justice, constitut
 <div class="quote"><blockquote>“I measure the progress of a community by the degree of progress which women have achieved.”</blockquote><cite>Dr. B. R. Ambedkar</cite></div>
 </div></div></section>
 <section class="final"><div class="container"><div class="smallcaps">The Journey Continues</div><h2>One Human<br><span class="gold">Family</span></h2><p>Educate • Organize • Choose Compassion.</p><div style="margin-top:28px"><a class="btn primary" href="#top">Return to the Beginning ↑</a></div></div></section>
-</main><footer><div class="container footer-inner"><div><strong style="color:#fff">AMBEDKAR JANATA PARTY</strong><br><span>Liberty • Equality • Fraternity • Human Dignity</span></div><div><a href="#archive">Archive</a> • <a href="#mystery">Mystery</a> • <a href="#ambedkar">Ambedkar</a> • <a href="#help">Book of Help</a> • <a target="_blank" rel="noopener" href="225_book_of_help.html">225 Puzzles</a> • <a href="#participate">Participate</a></div><div>India 1947 — 2026<br><span class="copyright-labor-notice" style="display:block;margin-top:10px;max-width:420px;line-height:1.5">This is copyrighted content involving many years of laborious work. Copyright © 2026 MysteryInAlphabets.com and Prem Kumar Konatham. All rights reserved.</span></div></div></footer><script>
+</main><footer><div class="container footer-inner"><div><strong style="color:#fff">AMBEDKAR JANATA PARTY</strong><br><span>Liberty • Equality • Fraternity • Human Dignity</span></div><div><a href="#archive">Archive</a> • <a href="#story">Story</a> • <a href="#galleries">Galleries</a> • <a href="#mystery">Mystery</a> • <a href="#ambedkar">Ambedkar</a> • <a href="#help">Book of Help</a> • <a target="_blank" rel="noopener" href="225_book_of_help.html">225 Puzzles</a> • <a href="https://karyalekha.ambedkarjanataparty.in?from=https://ambedkarjanataparty.in">KaryaLekha</a></div><div>India 1947 — 2026<br><span class="copyright-labor-notice" style="display:block;margin-top:10px;max-width:420px;line-height:1.5">This is copyrighted content involving many years of laborious work. Copyright © 2026 MysteryInAlphabets.com and Prem Kumar Konatham. All rights reserved.</span></div></div></footer><script>
 (function () {
   "use strict";
 

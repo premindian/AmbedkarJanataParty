@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- mystery-glass -->
+    <style id="mystery-glass-boot">html.mystery-glass-on{cursor:wait}html.mystery-glass-on::before{content:"";position:fixed;inset:0;z-index:2147483645;pointer-events:none!important;background:rgba(12,16,28,.78)}</style>
+    <script>try{if(sessionStorage.getItem("ambedkarMysteryGlass")==="1")document.documentElement.classList.add("mystery-glass-on")}catch(e){}</script>
+    <script src="../mystery-glass.js?v=ipadnav11"></script>
+    <script src="../ios-page-nav.js?v=11"></script>
+    <!-- /mystery-glass -->
+
     <!--
       COPYRIGHT NOTICE
       This is copyrighted content involving many years of laborious work.
@@ -10,7 +17,7 @@
     <meta name="copyright" content="This is copyrighted content involving many years of laborious work. Copyright © 2026 MysteryInAlphabets.com and Prem Kumar Konatham. All rights reserved.">
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Princess Anveshi and Her son Prince Rafael Aman Konatham: Heir to America's Destiny - Part III - MysteryInAlphabets.com</title>
     <!-- Google Fonts for RTL language support -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Noto+Sans+Malayalam:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -5293,10 +5300,9 @@ body.discovery-journey-report .ios-journey-fallback .ios-persistent-control { di
 </style>
 
 <style>
-.mobile-journey-nav{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);
-display:flex;gap:8px;z-index:999999;background:rgba(0,0,0,.88);padding:10px;border-radius:14px}
-.mobile-journey-nav a{color:#fff;text-decoration:none;padding:10px 12px;background:#1f2937;border-radius:8px;font-family:Arial}
-body{padding-bottom:90px!important;}
+.mobile-journey-nav{position:fixed;left:0;right:0;bottom:max(18px,calc(12px + env(safe-area-inset-bottom,0px)));width:max-content;max-width:calc(100% - 24px);margin:0 auto;display:flex;gap:8px;z-index:2147483645;pointer-events:none;background:rgba(0,0,0,.88);padding:10px;border-radius:14px;pointer-events:auto;-webkit-transform:none;transform:none}
+.mobile-journey-nav a{color:#fff;text-decoration:none;padding:12px 16px;min-height:44px;min-width:72px;display:flex;align-items:center;justify-content:center;box-sizing:border-box;background:#1f2937;border-radius:8px;font-family:Arial;cursor:pointer;-webkit-tap-highlight-color:rgba(255,255,255,.25);touch-action:manipulation;pointer-events:auto;position:relative;z-index:1}
+body{padding-bottom:max(120px,calc(90px + env(safe-area-inset-bottom,0px)))!important;}
 </style>
 </head>
 <body class="discovery-journey-report">
@@ -36342,7 +36348,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <div class="mobile-journey-nav">
 <a href="US-Prince-Rafael-002.html">⬅ Prev</a>
-<a href="India1947_Freedom.html">🏠 Home</a>
+<a href="../index.html">🏠 Home</a>
 <a href="US-Prince-Rafael-004.html">Next ➡</a>
 </div>
 </body>
