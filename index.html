@@ -527,12 +527,83 @@ a.volume-card:hover{
 .ajp-tiles b{display:block;font:900 clamp(.82rem,1.2vw,1.05rem)/1.2 "Cinzel",Georgia,serif;letter-spacing:.1em;text-transform:uppercase;text-shadow:0 1px 0 rgba(255,242,218,.7),0 -1px 0 rgba(60,35,15,.35)}
 .ajp-tiles span{display:inline-block;margin:4px 6px 0;font:600 .84rem/1.3 "Noto Sans Telugu","Noto Sans Devanagari",sans-serif;color:#4a3018;text-shadow:0 1px 0 rgba(255,242,218,.55)}
 .ajp-tiles span[lang="hi"]{font-family:"Noto Sans Devanagari",sans-serif}
+.ajp-life{position:absolute;left:0;top:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.ajp-bug{position:absolute;width:2.4%;aspect-ratio:40/64;filter:drop-shadow(1px 3px 2px rgba(30,15,5,.6))}
+.ajp-bug svg,.ajp-flag svg{display:block;width:100%;height:100%;overflow:visible}
+.ajp-bug .leg{transform-box:fill-box;transform-origin:50% 50%;animation:ajpLegA .3s ease-in-out infinite alternate}
+.ajp-bug .leg.b{animation-name:ajpLegB}
+.ajp-bug .ant{transform-box:fill-box;transform-origin:50% 100%;animation:ajpAntenna 1.5s ease-in-out infinite}
+.ajp-bug .ant+.ant{animation-delay:-.75s}
+.ajp-bug-a{animation:ajpBugA 24s ease-in-out infinite}
+.ajp-bug-b{width:2%;animation:ajpBugB 19s ease-in-out -6s infinite}
+.ajp-bug-c{animation:ajpBugC 17s ease-in-out -3s infinite}
+.ajp-bug-d{width:2.1%;animation:ajpBugD 21s ease-in-out -11s infinite}
+.ajp-cjp{position:absolute;z-index:3;right:clamp(12px,1.6vw,40px);bottom:140px;width:var(--ajp-cjp-w,300px);padding:16px 18px 15px;border-radius:12px;color:#f7f1e5;
+  background:linear-gradient(160deg,rgba(30,18,8,.88),rgba(62,36,15,.82));border:1px solid rgba(232,213,170,.38);
+  box-shadow:0 18px 40px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,240,210,.16);backdrop-filter:blur(6px);
+  opacity:0;animation:ajpRise 1s ease 2.8s forwards}
+.ajp-cjp.is-low{bottom:auto;top:var(--ajp-cjp-top)}
+.ajp-cjp-head{display:flex;align-items:center;gap:11px}
+.ajp-cjp-head b{display:block;font:700 .95rem/1.15 "Cinzel",Georgia,serif;letter-spacing:.06em;color:#e9c979}
+.ajp-cjp-head small{display:block;margin-top:3px;font:600 .62rem/1.2 "Outfit",Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#d8c49c}
+.ajp-cjp-seal{flex:0 0 auto;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1px solid #e9c97999;background:radial-gradient(circle at 35% 30%,#f3dfae,#b98a45 60%,#7a5525);box-shadow:0 0 0 3px rgba(233,201,121,.12),0 0 18px rgba(233,201,121,.35)}
+.ajp-cjp-roach{display:block;height:26px;aspect-ratio:40/64;transform:rotate(24deg);animation:ajpScurry 3s ease-in-out infinite}
+.ajp-cjp-roach svg{display:block;width:100%;height:100%;overflow:visible}
+.ajp-cjp-roach .ant{transform-box:fill-box;transform-origin:50% 100%;animation:ajpAntenna 1.5s ease-in-out infinite}
+.ajp-cjp-lines{position:relative;height:2.8em;margin:13px 0 12px;font:600 1.02rem/1.38 "Outfit",Arial,sans-serif}
+.ajp-cjp-lines p{position:absolute;left:0;right:0;top:0;margin:0;opacity:0;animation:ajpCjpLine 20s ease-in-out infinite;animation-delay:calc(3.4s + var(--n)*4s)}
+.ajp-cjp-lines em{font-style:normal;color:#e9c979}
+.ajp-cjp-cta{display:flex;align-items:center;flex-wrap:wrap;gap:8px 14px}
+.ajp-cjp-cta a{font:700 .74rem/1 "Outfit",Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#f7f1e5;text-decoration:none;border-bottom:1px solid #e8d5aa77;padding-bottom:3px}
+.ajp-cjp-cta a.go{padding:10px 14px;border:0;border-radius:999px;color:#2a1a0a;background:linear-gradient(100deg,#c99a3f,#f3dfae 50%,#c99a3f);background-size:200% 100%;box-shadow:0 6px 18px rgba(201,154,63,.35);animation:ajpGild 6s ease-in-out infinite}
+.ajp-cjp-cta a:hover{color:#fff}
+.ajp-cjp-langs{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px;padding-top:11px;border-top:1px solid rgba(232,213,170,.22)}
+.ajp-cjp-langs span{flex:0 0 100%;margin-bottom:2px;font:700 .6rem/1 "Outfit",Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#d8c49c}
+.ajp-cjp-langs a{padding:4px 8px;border:1px solid rgba(232,213,170,.3);border-radius:999px;font:600 .74rem/1.2 "Noto Sans Telugu","Noto Sans Tamil","Noto Sans Malayalam","Noto Sans Devanagari","Noto Sans Thai","Noto Sans Hebrew","Noto Sans Arabic","Noto Sans SC","Outfit",sans-serif;color:#f7f1e5;text-decoration:none;background:rgba(255,240,210,.06);transition:background .2s,border-color .2s,color .2s}
+.ajp-cjp-langs a:hover,.ajp-cjp-langs a:focus-visible{background:#e9c979;border-color:#e9c979;color:#2a1a0a}
+.ajp-cjp-cta a.go:hover{color:#1a0f05;box-shadow:0 8px 24px rgba(233,201,121,.55)}
+.build .cjp-build{max-width:720px;margin:14px auto 22px;padding:12px 16px;border-left:3px solid #c99a3f;border-radius:6px;background:rgba(201,154,63,.1);font-size:.95rem;line-height:1.55}
+.build .cjp-build a{font-weight:800;color:inherit;text-decoration:underline;text-decoration-color:#c99a3f;text-underline-offset:3px}
+.ajp-flag{position:absolute;left:86.4%;top:20.4%;width:5.2%;aspect-ratio:64/52;transform:translate(-4%,-100%) rotate(14deg);transform-origin:4% 100%;filter:drop-shadow(2px 5px 4px rgba(30,15,5,.55))}
 @keyframes ajpSettle{from{transform:scale(1.07);filter:brightness(.6)}to{transform:none;filter:none}}
 @keyframes ajpBeam{0%{left:-50%}55%,100%{left:115%}}
 @keyframes ajpRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @keyframes ajpCarve{to{clip-path:inset(-25% -6% -35% -2%)}}
 @keyframes ajpGild{0%,100%{background-position:100% 0}50%{background-position:0 0}}
 @keyframes ajpRule{to{transform:scaleX(1)}}
+@keyframes ajpLegA{from{transform:rotate(-14deg)}to{transform:rotate(14deg)}}
+@keyframes ajpLegB{from{transform:rotate(14deg)}to{transform:rotate(-14deg)}}
+@keyframes ajpCjpLine{
+  0%{opacity:0;transform:translateY(8px);clip-path:inset(0 100% 0 0)}
+  4%{opacity:1;transform:none;clip-path:inset(0 0 0 0)}
+  18%{opacity:1;transform:none;clip-path:inset(0 0 0 0)}
+  20%,100%{opacity:0;transform:translateY(-6px);clip-path:inset(0 0 0 0)}}
+@keyframes ajpScurry{0%,100%{transform:rotate(24deg) translate(0,0)}20%{transform:rotate(14deg) translate(-1px,-2px)}40%{transform:rotate(30deg) translate(1px,1px)}}
+@keyframes ajpAntenna{0%,100%{transform:rotate(0)}30%{transform:rotate(-9deg)}60%{transform:rotate(7deg)}}
+@keyframes ajpBugA{
+  0%{left:46%;top:66%;transform:translate(-50%,-50%) rotate(90deg)}
+  44%{left:58%;top:66%;transform:translate(-50%,-50%) rotate(90deg)}
+  52%{left:58%;top:66%;transform:translate(-50%,-50%) rotate(270deg)}
+  94%{left:46%;top:66%;transform:translate(-50%,-50%) rotate(270deg)}
+  100%{left:46%;top:66%;transform:translate(-50%,-50%) rotate(450deg)}}
+@keyframes ajpBugB{
+  0%{left:82%;top:11.6%;transform:translate(-50%,-50%) rotate(-90deg)}
+  44%{left:67%;top:11.6%;transform:translate(-50%,-50%) rotate(-90deg)}
+  52%{left:67%;top:11.6%;transform:translate(-50%,-50%) rotate(90deg)}
+  94%{left:82%;top:11.6%;transform:translate(-50%,-50%) rotate(90deg)}
+  100%{left:82%;top:11.6%;transform:translate(-50%,-50%) rotate(270deg)}}
+@keyframes ajpBugC{
+  0%{left:89%;top:33%;transform:translate(-50%,-50%) rotate(152deg)}
+  44%{left:94%;top:50%;transform:translate(-50%,-50%) rotate(152deg)}
+  52%{left:94%;top:50%;transform:translate(-50%,-50%) rotate(332deg)}
+  94%{left:89%;top:33%;transform:translate(-50%,-50%) rotate(332deg)}
+  100%{left:89%;top:33%;transform:translate(-50%,-50%) rotate(512deg)}}
+@keyframes ajpBugD{
+  0%{left:96.6%;top:27%;transform:translate(-50%,-50%) rotate(0)}
+  44%{left:96.6%;top:9%;transform:translate(-50%,-50%) rotate(0)}
+  52%{left:96.6%;top:9%;transform:translate(-50%,-50%) rotate(180deg)}
+  94%{left:96.6%;top:27%;transform:translate(-50%,-50%) rotate(180deg)}
+  100%{left:96.6%;top:27%;transform:translate(-50%,-50%) rotate(360deg)}}
 @keyframes ajpTile{0%,22%,100%{box-shadow:inset 0 1px 0 rgba(255,246,226,.65),inset 0 -3px 7px rgba(70,45,20,.38),0 12px 26px rgba(0,0,0,.45)}
   8%,14%{box-shadow:inset 0 1px 0 rgba(255,246,226,.65),inset 0 -3px 7px rgba(70,45,20,.38),0 0 0 2px #4f8cff,0 0 34px rgba(79,140,255,.85)}}
 @media(max-width:760px),(max-aspect-ratio:1/1) and (max-width:1100px){
@@ -547,7 +618,8 @@ a.volume-card:hover{
   .ajp-kicker{font-size:.6rem;letter-spacing:.14em}
   .ajp-year{justify-content:center}
   .ajp-front .ajp-actions{align-items:center}
-  .ajp-tiles{position:static;grid-template-columns:repeat(2,1fr);gap:10px;margin:0 auto 24px}
+  .ajp-cjp{order:1;position:relative;right:auto;bottom:auto;width:auto;max-width:440px;margin:0 16px 18px;align-self:center;text-align:left}
+  .ajp-tiles{order:2;position:static;grid-template-columns:repeat(2,1fr);gap:10px;margin:0 auto 24px}
   .ajp-tiles li{padding:10px 6px 9px}
   .ajp-tiles span{font-size:.74rem;margin:3px 4px 0}
 }
@@ -557,6 +629,14 @@ a.volume-card:hover{
   .ajp-year i{transform:none}
   .ajp-kicker,.ajp-tagline,.ajp-year,.ajp-front .ajp-actions,.ajp-tiles li{animation:none!important;opacity:1}
   .ajp-title span{animation:none!important;clip-path:none}
+  .ajp-bug,.ajp-bug *,.ajp-flag *,.ajp-cjp,.ajp-cjp *{animation:none!important}
+  .ajp-cjp{opacity:1}
+  .ajp-cjp-lines{height:auto}
+  .ajp-cjp-lines p{position:static;opacity:1;margin-bottom:4px}
+  .ajp-bug-a{left:52%;top:66%;transform:translate(-50%,-50%) rotate(90deg)}
+  .ajp-bug-b{left:74%;top:11.6%;transform:translate(-50%,-50%) rotate(-90deg)}
+  .ajp-bug-c{left:91%;top:40%;transform:translate(-50%,-50%) rotate(152deg)}
+  .ajp-bug-d{left:96.6%;top:18%;transform:translate(-50%,-50%)}
 }
 </style>
 </head><body>
@@ -574,6 +654,33 @@ a.volume-card:hover{
   <span class="ajp-torch" aria-hidden="true"></span>
   <span class="ajp-shade" aria-hidden="true"></span>
   <canvas class="ajp-dust" aria-hidden="true"></canvas>
+  <div class="ajp-life" aria-hidden="true">
+    <span class="ajp-flag"><svg viewBox="0 0 64 52">
+      <defs><linearGradient id="ajpFold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="20" y2="0" spreadMethod="repeat"><stop offset="0" stop-color="#fff" stop-opacity=".2"/><stop offset=".3" stop-color="#fff" stop-opacity="0"/><stop offset=".55" stop-color="#1c0d04" stop-opacity=".2"/><stop offset=".8" stop-color="#1c0d04" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity=".2"/></linearGradient><linearGradient id="ajpPole" x1="0" x2="1"><stop offset="0" stop-color="#7a5a32"/><stop offset=".5" stop-color="#e9d2a2"/><stop offset="1" stop-color="#6b4c28"/></linearGradient></defs>
+      <rect x="1.4" y="0" width="2.6" height="52" rx="1.3" fill="url(#ajpPole)"/><circle cx="2.7" cy="0.6" r="2.2" fill="#e9c979"/>
+      <g class="cloth">
+        <path d="M4 2H40V10H4Z" fill="#ff9933"/><path d="M4 10H40V18H4Z" fill="#fff"/><path d="M4 18H40V26H4Z" fill="#138808"/>
+        <g class="chakra" fill="none" stroke="#000080" stroke-width=".55"><circle cx="22" cy="14" r="3.4"/><path d="M22 10.6V17.4M18.6 14H25.4M19.6 11.6L24.4 16.4M24.4 11.6L19.6 16.4"/></g>
+        <path class="fold" d="M4 2H40V26H4Z" fill="url(#ajpFold)"/>
+      </g>
+    </svg></span>
+    <i class="ajp-bug ajp-bug-a"></i><i class="ajp-bug ajp-bug-b"></i><i class="ajp-bug ajp-bug-c"></i><i class="ajp-bug ajp-bug-d"></i>
+  </div>
+  <aside class="ajp-cjp" aria-label="Cockroach Janta Party and the Book of Help">
+    <div class="ajp-cjp-head"><span class="ajp-cjp-seal"><i class="ajp-cjp-roach" aria-hidden="true"></i></span><div><b>Cockroach Janta Party</b><small>The Youth AI Challenge &middot; 2026</small></div></div>
+    <div class="ajp-cjp-lines">
+      <p style="--n:0">They called India's jobless youth <em>&ldquo;cockroaches.&rdquo;</em></p>
+      <p style="--n:1">Cockroaches survive <em>everything.</em></p>
+      <p style="--n:2"><em>The challenge:</em> harness super-intelligent AI.</p>
+      <p style="--n:3">Build all <em>225 Book of Help</em> solutions &mdash; by India's youth, for India.</p>
+      <p style="--n:4">Pick a puzzle. <em>Build it with AI.</em> Start today.</p>
+    </div>
+    <div class="ajp-cjp-cta"><a class="go" target="_blank" rel="noopener" href="225_book_of_help.html">Take the AI Build Challenge &rarr;</a><a href="HTML/India-Mystery-Cde-Why.html?discovery=19">The CJP story</a></div>
+    <div class="ajp-cjp-langs">
+      <span>CJP puzzles in 10 languages</span>
+      <a lang="te" href="HTML/India-Mystery-Cde-Why.html?discovery=19">తెలుగు</a><a lang="ta" href="HTML/India-Mystery-Cde-Why.html?discovery=20">தமிழ்</a><a lang="ml" href="HTML/India-Mystery-Cde-Why.html?discovery=21">മലയാളം</a><a lang="hi" href="HTML/India-Mystery-Cde-Why.html?discovery=22">हिन्दी</a><a lang="th" href="HTML/India-Mystery-Cde-Why.html?discovery=23">ไทย</a><a lang="el" href="HTML/India-Mystery-Cde-Why.html?discovery=24">Ελληνικά</a><a lang="en" href="HTML/India-Mystery-Cde-Why.html?discovery=25">English</a><a lang="he" href="HTML/India-Mystery-Cde-Why.html?discovery=26">עברית</a><a lang="zh" href="HTML/India-Mystery-Cde-Why.html?discovery=27">中文</a><a lang="ar" href="HTML/India-Mystery-Cde-Why.html?discovery=28">العربية</a>
+    </div>
+  </aside>
   <div class="container ajp-copy">
     <div class="ajp-kicker">A People's Constitution &middot; A People's History &middot; A People's Movement</div>
     <h1 class="ajp-title"><span>Ambedkar</span><span>Janata Party</span></h1>
@@ -1169,6 +1276,7 @@ Dr. Bhimrao Ramji Ambedkar's life connected education, social justice, constitut
   <div class="build">
     <h3>Don't Just Watch the Future. Build It.</h3>
     <p>The Book of Help turns social problems into buildable puzzles. The next step is for people with capital, technology and community relationships to open one and say: <strong>“Let's build this.”</strong></p>
+    <p class="cjp-build"><a href="HTML/India-Mystery-Cde-Why.html">Cockroach Janta Party</a> &middot; <strong>The Youth AI Challenge.</strong> They called India's jobless youth “cockroaches.” Cockroaches survive everything. Now the challenge is for the youth of this great nation to harness super-intelligent AI and build all 225 Book of Help solutions &mdash; by India's youth, for India. Pick a puzzle, gather your friends, build it with AI, and turn it into work that pays and helps.</p>
     <div class="btns">
       <a class="btn primary" target="_blank" rel="noopener" href="225_book_of_help.html">Open the 225 Puzzles</a>
       <a class="btn secondary" href="#karyalekha">Open KaryaLekha</a>
@@ -1356,6 +1464,68 @@ Dr. Bhimrao Ramji Ambedkar's life connected education, social justice, constitut
   var front=document.querySelector(".ajp-front");
   if(!front) return;
   var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var wallImg=front.querySelector(".ajp-wall img"),life=front.querySelector(".ajp-life");
+  var roach='<svg viewBox="0 0 40 64"><defs><linearGradient id="ajpRoachBody" x1="0" x2="1"><stop offset="0" stop-color="#3d1406"/><stop offset=".42" stop-color="#9a4518"/><stop offset="1" stop-color="#3a1305"/></linearGradient></defs>'+
+    '<g fill="none" stroke="#2a1004" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">'+
+    '<path class="leg" d="M14 27L6 21L2 12"/><path class="leg b" d="M26 27L34 21L38 12"/>'+
+    '<path class="leg b" d="M13 35L4 35L0 42"/><path class="leg" d="M27 35L36 35L40 42"/>'+
+    '<path class="leg" d="M14 43L6 51L4 62"/><path class="leg b" d="M26 43L34 51L36 62"/></g>'+
+    '<g fill="none" stroke="#3a1606" stroke-width="1.1" stroke-linecap="round"><path class="ant" d="M18 13Q12 5 5 0"/><path class="ant" d="M22 13Q28 5 35 0"/></g>'+
+    '<ellipse cx="20" cy="39" rx="9" ry="17" fill="url(#ajpRoachBody)"/><path d="M20 25V56" stroke="#1e0802" stroke-width=".8"/>'+
+    '<ellipse cx="20" cy="23" rx="8.2" ry="5.6" fill="#6e2a0e"/><ellipse cx="20" cy="15.5" rx="4.2" ry="3.3" fill="#220b03"/>'+
+    '<ellipse cx="16.6" cy="36" rx="2" ry="9" fill="#fff" opacity=".3"/></svg>';
+  front.querySelectorAll(".ajp-bug,.ajp-cjp-roach").forEach(function(el){el.innerHTML=roach;});
+  var cloth=front.querySelector(".ajp-flag .cloth");
+  if(cloth){
+    var bands=cloth.querySelectorAll("path:not(.fold)"),fold=cloth.querySelector(".fold"),chakra=cloth.querySelector(".chakra");
+    var foldGrad=document.getElementById("ajpFold"),flagOn=true,WAVE=20,SPEED=1.6,AMP=1.5;
+    var off=function(x,t){var d=(x-4)/36;return AMP*d*Math.sin((x-4)/WAVE*6.2832-t*SPEED*6.2832);};
+    var edge=function(y,t,rev){
+      var pts=[];
+      for(var i=0;i<=24;i++){var x=4+i*1.5;pts.push(x.toFixed(2)+" "+(y+off(x,t)).toFixed(2));}
+      if(rev) pts.reverse();
+      return pts.join("L");
+    };
+    var drawFlag=function(t){
+      for(var b=0;b<3;b++) bands[b].setAttribute("d","M"+edge(2+b*8,t)+"L"+edge(10+b*8,t,true)+"Z");
+      fold.setAttribute("d","M"+edge(2,t)+"L"+edge(26,t,true)+"Z");
+      chakra.setAttribute("transform","translate(0 "+off(22,t).toFixed(2)+")");
+      foldGrad.setAttribute("gradientTransform","translate("+((t*SPEED*WAVE)%WAVE).toFixed(2)+" 0)");
+    };
+    drawFlag(0);
+    if(!reduce){
+      if(window.IntersectionObserver) new IntersectionObserver(function(e){flagOn=e[0].isIntersecting;}).observe(cloth);
+      (function tick(now){
+        if(flagOn&&!document.hidden) drawFlag(now/1000);
+        requestAnimationFrame(tick);
+      })(0);
+    }
+  }
+  function fitLife(){
+    if(!wallImg||!life) return;
+    var W=wallImg.clientWidth,H=wallImg.clientHeight,nw=wallImg.naturalWidth||1280,nh=wallImg.naturalHeight||720;
+    var s=Math.max(W/nw,H/nh),pos=getComputedStyle(wallImg).objectPosition.split(" ");
+    var px=(parseFloat(pos[0])||50)/100,py=(parseFloat(pos[1])||50)/100;
+    life.style.left=wallImg.offsetLeft+(W-nw*s)*px+"px";
+    life.style.top=wallImg.offsetTop+(H-nh*s)*py+"px";
+    life.style.width=nw*s+"px";
+    life.style.height=nh*s+"px";
+    var plaque=front.querySelector(".ajp-cjp");
+    if(plaque&&getComputedStyle(plaque).position==="absolute"){
+      var glassesRight=wallImg.offsetLeft+(W-nw*s)*px+nw*s*.79;
+      var room=front.clientWidth-parseFloat(getComputedStyle(plaque).right)-glassesRight;
+      front.style.setProperty("--ajp-cjp-w",Math.max(250,Math.min(330,room))+"px");
+      var glassesBottom=wallImg.offsetTop+(H-nh*s)*py+nh*s*.53;
+      var low=room<250&&glassesBottom+12+plaque.offsetHeight<front.clientHeight-120;
+      plaque.classList.toggle("is-low",low);
+      front.style.setProperty("--ajp-cjp-top",(glassesBottom+12)+"px");
+    }
+  }
+  fitLife();
+  if(wallImg) wallImg.addEventListener("load",fitLife);
+  window.addEventListener("resize",fitLife);
+  if(window.ResizeObserver) new ResizeObserver(fitLife).observe(front);
 
   if(!reduce&&window.matchMedia("(pointer:fine)").matches){
     front.addEventListener("pointermove",function(e){

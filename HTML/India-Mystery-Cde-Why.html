@@ -31333,5 +31333,28 @@ document.addEventListener("DOMContentLoaded", () => {
 <a href="../index.html">🏠 Home</a>
 <a href="America-Mystery-Code.html">Next ➡</a>
 </div>
+<script id="discovery-deeplink">
+(function(){
+  var m=/[?&#]discovery[=-](\d+)/.exec(location.search+location.hash);
+  if(!m) return;
+  var n=parseInt(m[1],10)-1,tries=0;
+  var dot=function(k){return document.querySelector('.discovery-console .record-dot[data-record-jump="'+k+'"]');};
+  var landed=function(){var l=document.getElementById('discoveryLabel');return l&&l.textContent.indexOf('Discovery '+(n+1)+' ')===0;};
+  function go(){
+    var next=document.getElementById('nextDiscovery');
+    if(dot(n)&&next&&!landed()){
+      if(n<=0) dot(0).click();
+      else{dot(n-1).click();setTimeout(function(){next.click();},80);}
+    }
+    if(tries++<12) setTimeout(function(){
+      if(!landed()) return go();
+      var show=function(){var card=document.querySelector('.record-card.discovery-active');if(card) card.scrollIntoView({block:'start'});};
+      show();setTimeout(show,900);
+    },700);
+  }
+  if(document.readyState==='complete') setTimeout(go,400);
+  else window.addEventListener('load',function(){setTimeout(go,400);});
+})();
+</script>
 </body>
 </html>
